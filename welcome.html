@@ -7,76 +7,90 @@ Always have it to try to compatible with other languages -->
         <title>Sung's Page</title>
     </head>
     <body>
-    <!-- It provides more structure "cmd + /" to make it quick -->
-        <h1>Hello World! <span>25-02-2020</span></h1>
-        <p>
-            Understanding HTML is <em>really</em> <strong>important</strong>!
-        </p>
-        <p>
-            Understanding HTML is
-            <em>
-                <strong>really important</strong>
-            </em>
-            !
-        </p>
 
-            <div id="main-header">
-                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Commodi consequuntur illum quis tenetur. Illum omnis quaerat sit! <br><br>
-                Ab commodi dolores error in iste nemo, provident quam reiciendis repudiandae ut voluptate.
-            </div>
-    <hr>
-    <!--hr makes "horizontal line"-->
-            <main id="main-content">
+        <header>
+            <h1>Hello World! <span>25-02-2020</span></h1>
+        </header>
 
-    <!-- "p" + tab -> <p> </p> automatically generates it -->
-                <p>
-                    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ab, ad adipisci, expedita facere fugiat harum id illo inventore iste itaque magni molestiae mollitia nemo nostrum, rem sunt suscipit ut veniam.
-                </p>
-            </main>
-        <div>
-            <ol>
-                <li>Apples</li>
-                <li>Cherries</li>
-                <li>Bananas</li>
-            </ol>
+        <nav>
             <ul>
-                <li>Java</li>
-                <li>JavaScript</li>
-                <li>Python</li>
-                <li>
-                    <a href="https://www.php.net" target="_blank">
-                        PHP
-                    </a>
-                </li>
+                <li><a href="#">Intro</a></li>
+                <li><a href="#">HTML</a></li>
             </ul>
-        </div>
-        <div>
-<!-- Image hotlink -->
-            <img src="https://i.ytimg.com/vi/MPV2METPeJU/maxresdefault.jpg" alt="picture of a puppy" width="100%">
-<!-- local file-->
-            <img src="imgs/gt4.jpg" alt="picture of dream car" width="100%">
-        </div>
+        </nav>
 
-        <div>
-            <table border="1">
-                <tr>
-                    <th>Product</th>
-                    <th>Price</th>
-                    <th>Vegan</th>
-                </tr>
-                <tr>
-                    <td>Iced Tea</td>
-                    <td>$3.99</td>
-                    <td>Yes</td>
-                </tr>
-                <tr>
-                    <td>Hot-dog</td>
-                    <td>$5.99</td>
-                    <td>No</td>
-                </tr>
-            </table>
-        </div>
+        <main id="main-content">
+            <article>
+                Understanding HTML is <em>really</em> <strong>important</strong>!
+            </article>
+            <article>
+                Understanding HTML is
+                <em>
+                    <strong>really important</strong>
+                </em>
+                !
+            </article>
+
+            <section id="main-header">
+                    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Commodi consequuntur illum quis tenetur. Illum omnis quaerat sit! <br><br>
+                    Ab commodi dolores error in iste nemo, provident quam reiciendis repudiandae ut voluptate.
+            </section>
+        <hr>
+        <!--hr makes "horizontal line"-->
 
 
+        <!-- "p" + tab -> <p> </p> automatically generates it -->
+            <p>
+                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ab, ad adipisci, expedita facere fugiat harum id illo inventore iste itaque magni molestiae mollitia nemo nostrum, rem sunt suscipit ut veniam.
+            </p>
+
+            <div>
+                <ol>
+                    <li>Apples</li>
+                    <li>Cherries</li>
+                    <li>Bananas</li>
+                </ol>
+                <ul>
+                    <li>Java</li>
+                    <li>JavaScript</li>
+                    <li>Python</li>
+                    <li>
+                        <a href="https://www.php.net" target="_blank">
+                            PHP
+                        </a>
+                    </li>
+                </ul>
+            </div>
+            <div>
+    <!-- Image hotlink -->
+                <img src="https://i.ytimg.com/vi/MPV2METPeJU/maxresdefault.jpg" alt="picture of a puppy" width="100%">
+    <!-- local file-->
+                <img src="imgs/gt4.jpg" alt="picture of dream car" width="100%">
+            </div>
+
+            <div>
+                <table border="1">
+                    <tr>
+                        <th>Product</th>
+                        <th>Price</th>
+                        <th>Vegan</th>
+                    </tr>
+                    <tr>
+                        <td>Iced Tea</td>
+                        <td>$3.99</td>
+                        <td>Yes</td>
+                    </tr>
+                    <tr>
+                        <td>Hot-dog</td>
+                        <td>$5.99</td>
+                        <td>No</td>
+                    </tr>
+                </table>
+            </div>
+
+        </main>
+        <footer>
+            Secondary links and copyright notices
+        </footer>
     </body>
 </html>
