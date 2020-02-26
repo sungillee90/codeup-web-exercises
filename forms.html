@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>Register With Us</title>
+    </head>
+
+    <body>
+        <h1>Register With Us</h1>
+<!--What do you notice when changing the form's request method from GET to POST?
+    I noticed that "POST" URL does not show, but "GET" shows everything on URL
+-->
+        <form method="POST" action="https://request-inspector.glitch.me/">
+            <label for="email">Email address</label>
+            <input id="email" name="email add" type="text">
+<br>
+            <label for="password">Password</label>
+            <input id="password" name="user's PW" type="password">
+<br>
+            <lable for="bio">Bio:<textarea name="bio" id="bio" cols="30" rows="10"></textarea></lable>
+<hr>
+            <div>
+                "How did you hear about us?" <br>
+                <!--What happens if the inputs are given different name attributes?
+                    "radio" buttons not working so I can choose multiple selection.
+                -->
+                <label>Billboard<input type="radio" name="source" value="billboard"></label><br>
+                <label>Radio Ads<input type="radio" name="source" value="Radio Ads"></label><br>
+                <label>Internet Ads<input type="radio" name="source" value="Internet Ads"></label><br>
+                <label>Other<input type="radio" name="source" value="Other"></label>
+            </div>
+<hr>
+            <div>
+                "What web browser do you use?" <br>
+                <select name="webBrowser" id="webBrowser">
+                    <option value="selector"></option>
+                    <option value="Google Chrome">Google Chrome</option>
+                    <option value="Safari">Safari</option>
+                    <option value="FireFox">FireFox</option>
+                </select>
+            </div>
+
+            <button type="submit">Submit the form</button>
+        </form>
+
+    </body>
+</html>
