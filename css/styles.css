@@ -1,6 +1,33 @@
 
+
 .fancy-header
 {
-    color: purple; /* single line comment */
+    /*color: #00F; !* single line comment *!*/
+    text-decoration: underline;
+    text-align: center;
+    font-style: italic;
+    font-size: ;
+}
+
+#container1{
+    color: #00F;
     text-decoration: underline;
 }
+
+body {
+    font-family: Merriweather, serif;
+    font-size: 1.2em;
+    background-color: lightgray;
+    background-image: url("https://cdn.pixabay.com/photo/2016/04/15/04/02/water-1330252__340.jpg");
+    /*background-repeat: space;*/
+}
+
+ul {
+    list-style: square;
+}
+
+#table1 {
+    font-weight: bold;
+
+}
+
