@@ -15,25 +15,51 @@
     </div>
     <div>
         <form method="POST" action="https://request-inspector.glitch.me/">
-            <span>
-                <label>Round trip<input type="radio" name="source" value="RoundTrip"></label><br>
-                <label>One way<input type="radio" name="source" value="OneWay"></label><br>
-                <input name="RedeemMiles" value="Yes" type="checkbox">Redeem miles
-            </span>
-            <table>
-                <tr>
-                    <td>From
+            <div>
+                <span>
+                    <label>Round trip<input type="radio" name="source" value="RoundTrip"></label><br>
+                    <label>One way<input type="radio" name="source" value="OneWay"></label><br>
+                    <input name="RedeemMiles" value="Yes" type="checkbox">Redeem miles
+                </span>
+            </div>
+<!--            <table>-->
+<!--                <tr>-->
+<!--                    <td>From-->
 
-                    </td>
-                    <td>To</td>
-                    <td>Number of passengers</td>
-                </tr>
-                <tr>
-                    <td></td>
-                </tr>
-            </table>
+<!--                    </td>-->
+<!--                    <td>To</td>-->
+<!--                    <td>Number of passengers</td>-->
+<!--                </tr>-->
+<!--                <tr>-->
+<!--                    <td></td>-->
+<!--                </tr>-->
+<!--            </table>-->
+            <div>
+                <span>
+                    <lable>
+                        From<br>
+                        <input type="text" name="From" >
+                    </lable>
+                    <lable>
+                        To<br>
+                        <input type="text" name="To" >
+                    </lable>
+                    <lable>
+                        Number of passengers<br>
+                        <input type="text" name="#ofPassengers" >
+                    </lable>
+                    <lable>
+                        Depart<br>
+                        <input type="date" name="departureDate" >
+                    </lable>
+                    <lable>
+                        Return<br>
+                        <input type="date" name="ReturnDate" >
+                    </lable>
+                </span>
+            </div>
 <br>
-            <button type="submit">Submit the form</button>
+            <button type="submit">Search</button>
 
         </form>
     </div>
