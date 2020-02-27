@@ -6,18 +6,70 @@
     </head>
 
     <body>
+    <h1>Register With Us</h1>
+<!--    step by step with instructor -->
+<!--empty form element-->
+        <form method="POST" action="https://request-inspector.glitch.me/">
+<!--Create text fields for email and password with appropriate placeholder values.-->
+            <label for="email1">Email:</label>
+            <input id="email1" type="text" name="email" placeholder="Give me your email">
+            <br>
+            <label for="password1">Password:</label>
+            <input id="password1" type="password" name="password" placeholder="Enter your password">
+            <br>
+<!--            Create a textarea named "bio". This is for the user to fill out a short description of themselves.-->
+            <label for="bio1">Bio: </label>
+            <textarea name="bio" id="bio1" cols="60" rows="20"></textarea>
+<!--            cols="40" (wide)Horizontally  rows="20" 20 rowsVertically-->
+            <br>
+<!--            Create a "How did you hear about us" section that contains radio buttons. The values should be "billboard", "radio advertisement", "internet advertisement", and "other". Only one of the values should be allowed to be selected at a time.-->
+            <h3>"How did you hear about us?"</h3>
+            <label>Billboard: <input type="radio" name="source1" value="Billboard"></label><br>
+            <label>Radio Advertisement: <input type="radio" name="source2" value="Radio ads"></label><br>
+            <label for="internetad">Internet Advertisement: <input id="internetad" type="radio" name="source3" value="Internet ads"></label><br>
+            <label for="other">Other: <input id="other" type="radio" name="source" value="Other"></label><br>
+<hr>
+<!--Change these inputs so that multiple answers are allowed to be selected.
+checkboxes-->
+            <label>Billboard: <input type="checkbox" name="Billboard" value="True"></label><br>
+            <label>Radio Advertisement: <input type="checkbox" name="Radio ads" value="True"></label><br>
+            <label for="internetad">Internet Advertisement: <input id="internetad" type="checkbox" name="Internet ads" value="True"></label><br>
+            <label for="other">Other: <input id="other" type="checkbox" name="Other" value="True"></label><br>
+
+<!--            Create a dropdown that asks the user what web browser they are using.
+"select"-->
+            <label for="browser">What brower are you using?
+                <select id="broweser" name="browser">
+                    <option value="chrome">Chrome</option>
+                    <option value="firefox">Firefox</option>
+                    <option value="safari">Safari</option>
+                    <option value="edge">Edge</option>
+                </select>
+            </label>
+<br>
+            <!--            submit button!-->
+            <button type="summit">Register</button>
+<!--alternating way
+<input type="submit">
+-->
+
+
+
+
+        </form>
         <h1>Register With Us</h1>
 <!--What do you notice when changing the form's request method from GET to POST?
     I noticed that "POST" URL does not show, but "GET" shows everything on URL
+    Query string shows up with "GET"
 -->
         <form method="POST" action="https://request-inspector.glitch.me/">
             <label for="email">Email address</label>
-            <input id="email" name="email add" type="text">
+            <input id="email" name="email add" type="text" placeholder="Enter your email">
 <br>
             <label for="password">Password</label>
-            <input id="password" name="user's PW" type="password">
+            <input id="password" name="user's PW" type="password" placeholder="Enter your password">
 <br>
-            <lable for="bio">Bio:<textarea name="bio" id="bio" cols="30" rows="10"></textarea></lable>
+            <lable for="bio">Bio:<textarea name="bio" id="bio" cols="30" rows="10" placeholder="Tell me about yourself"></textarea></lable>
 <hr>
             <div>
                 "How did you hear about us?" <br>
