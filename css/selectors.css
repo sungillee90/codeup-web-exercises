@@ -8,7 +8,12 @@
 /*  selector for all "h1" elements
     that are a descendent of id="container"
     and have a class of "fancy-header" */
-h1.fancy-header {
+/* what I did was
+ h1.fancy-header
+ still work, but what problem asking was "id element and class"
+ */
+
+#container h1.fancy-header {
     color: blue;
     text-decoration: underline;
 }

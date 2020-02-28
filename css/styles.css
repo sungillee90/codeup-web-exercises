@@ -6,7 +6,11 @@
     text-decoration: underline;
     text-align: center;
     font-style: italic;
-    font-size: ;
+}
+/*element selector*/
+h2 {
+    text-decoration: underline;
+    color: blue;
 }
 
 #container1{
@@ -14,20 +18,45 @@
     text-decoration: underline;
 }
 
+/*to change background use "body" element*/
 body {
-    font-family: Merriweather, serif;
+    font-family: 'Lacquer', serif;
     font-size: 1.2em;
-    background-color: lightgray;
+    background-color: green;
+    /*use "COPY IMAGE ADDRESS!! not LINK ADD*/
     background-image: url("https://cdn.pixabay.com/photo/2016/04/15/04/02/water-1330252__340.jpg");
-    /*background-repeat: space;*/
+    /*              width height in % */
+    background-size: 100% 50%;
+    /*after background img, background color shows up*/
+    background-repeat: no-repeat;
 }
 
 ul {
     list-style: square;
 }
 
-#table1 {
-    font-weight: bold;
-
+tr>td {
+    font-size: 30px;
+    padding: 10px;
 }
 
+a{
+    color: lightcoral;
+}
+
+/*To do hover  "a:" :*/
+a:hover {
+    background-color: mediumspringgreen;
+}
+
+a:link {
+    color: red;
+}
+
+a:visited {
+    color: blueviolet;
+}
+
+a:active {
+    background-color: orange;
+}
