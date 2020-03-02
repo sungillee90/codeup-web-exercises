@@ -1,0 +1,43 @@
+.top-nav {
+    background: #333333;
+    width: 100%;
+    z-index: 1000;
+    /* make it transparency */
+    opacity: 0.9;
+
+}
+.nav {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+}
+.nav-item {
+    display: inline-block;
+    padding: 1.5em;
+}
+.nav-link {
+    font-style: normal;
+    color: #d6d6d6;
+    text-decoration: none;
+}
+.nav-link:hover {
+    color: white;
+}
+
+.main {
+    width: 100%;
+    position: fixed;
+    margin: 0 auto;
+    border-bottom: 1px solid rgb(214, 214, 214);
+}
+.main-item {
+    float: left;
+    font-weight: bold;
+    font-size: 2em;
+}
+.sub-item1{
+    float: left;
+}
+.sub-item2 {
+    float: right;
+}
