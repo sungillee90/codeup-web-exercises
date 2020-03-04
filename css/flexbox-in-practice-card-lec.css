@@ -36,6 +36,7 @@ hr {
     background: white;
     width: 250px;
     height: 350px;
+
     display: flex;
     flex-direction: column;
     justify-content: space-evenly;
