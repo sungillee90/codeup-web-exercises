@@ -40,6 +40,31 @@
             favoriteFoods.reverse();
             console.log(favoriteFoods);
 
+            // Exercise 6
+            // Sort the favorite foods array in the alphabetical order.
+            favoriteFoods.sort();
+            console.log('Sort fav Foods in alphabetical order.', favoriteFoods);
+            // var sortedFavoriteFoods = favoriteFoods.sort();
+            // works too;
+
+            // Exercise 7
+            // Sort the favorite foods array in reverse alphabetical order.
+            // ANS:
+            // favoriteFoods.sort().reverse();
+            favoriteFoods.reverse();
+            console.log('Sort favorite foods in reverse alphabetical order.', favoriteFoods);
+
+            // Exercise 8
+            // Create a new array of fruits and add that array to the end of your favorite foods array.
+            var fruits = ["banana", "pineapple", "apple", "mango", "papaya"];
+            console.log(fruits);
+            // favoriteFoods.push(fruits);
+            console.log('my original answer', favoriteFoods);
+            // result gave me end of favoriteFoods item, [Array] hmm..
+            // PUSH can not work it will throw [array].
+            // ANS
+            var concatenatedArrays = favoriteFoods.concat(fruits);
+            console.log('created new array and add it to array to the end of favFoods array', concatenatedArrays);
 
         </script>
     </body>
