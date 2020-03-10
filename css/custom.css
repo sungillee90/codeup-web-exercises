@@ -1,0 +1,46 @@
+* {
+}
+
+.jumbotron {
+    background-size: cover;
+    background-image: url("../imgs/pizza.png");
+}
+.jumbotron>h1{
+    color: black;
+    text-align: center;
+    background-color: rgb(249, 249, 249);
+    opacity: 0.5;
+}
+.card-boss {
+    border: 1px solid gray;
+}
+.card-boss>header {
+    margin-top: 0;
+    background-color: rgb(0, 123, 254);
+    color:white;
+}
+.card {
+    margin: 1em;
+}
+.card-header{
+    margin-top: 1em;
+}
+.card-text {
+    margin: 1em;
+}
+.card>footer {
+    text-align: right;
+}
+
+@media (min-width: 576px) { ... }
+
+@media (min-width: 768px) { ... }
+
+/* max width of 992px do not display? */
+@media (max-width: 992px) {
+    .jumbotron{
+        display: none;
+    }
+}
+
+@media (min-width: 1200px) { ... }
