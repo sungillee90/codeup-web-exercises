@@ -160,10 +160,22 @@
             // Create a function that generates and returns a random number between 0 and 10. (Limit 0-10)
             function getRandomNumber() {
               //  I got it from https://www.w3schools.com/js/js_random.asp
-              return Math.floor(Math.random() * 11);
+                return Math.floor(Math.random() * 16);
             }
-
             console.log('getRandom number: ' + getRandomNumber());
+
+            // Exercise 16
+            // Create an array with your classmates names in it.
+            var classmatesArray = ['Moriah', 'Ramon', 'Jacob', 'Esai', 'Emily', 'Evelyn', 'Roshan','Nayoung', 'Delayne', 'Sung Il', 'Valeria', 'Tyler', 'Ry', 'Rex', 'Ron', 'Sarah'];
+            console.log('classmatesArray', classmatesArray);
+
+            // Exercise 17
+            // Create a function to that returns a random item from an array.
+            function getRandomItem(array) {
+                return array[getRandomNumber()];
+            }
+            console.log('getRandomItem(classmatesArray): ' , getRandomItem(classmatesArray));
+
 
 
         </script>
