@@ -179,13 +179,14 @@
             // Exercise 18
             // Create a function that prints a lists of names randomly from the apex array.
             function getRandomName(classmatesArray) {
-                return classmatesArray[Math.floor(Math.random()*classmatesArray.length)]
+                for (var x = 0; x < classmatesArray.length; x++) {
+                    console.log('Index: ' + x + ' ' + getRandomItem(classmatesArray));
+                }
             }
-
-            console.log(getRandomName(classmatesArray));
-            // solution
-            function
-
+            // what I tried...
+            // getRandomName();
+            //     return classmatesArray[Math.floor(Math.random()*classmatesArray.length)]
+            // }
 
 
 
