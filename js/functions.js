@@ -9,10 +9,10 @@
  * > sayHello("codeup") // returns "Hello, codeup!"
  */
 function sayHello(name) {
-    console.log('Hello' + ' ' + name + '!');
-    // return ('Hello ' + name + '!');
+    return ('Hello ' + name + '!');
 }
 sayHello('codeup');
+    console.log(sayHello('codeup'))
 
 /**
  * TODO:
@@ -21,10 +21,8 @@ sayHello('codeup');
  *
  * console.log 'helloMessage' to check your work
  */
-var helloMessage = function sayHello(name) {
-        return helloMessage;
-}
-console.log('helloMessage', helloMessage(name));
+var helloMessage = sayHello("sung");
+    console.log(helloMessage);
 
 /**
  * TODO:
@@ -32,6 +30,8 @@ console.log('helloMessage', helloMessage(name));
  * variable to the 'sayHello' function. You should see the same output in the
  * console.
  */
+var myName = "Sung";
+sayHello(myName);
 
 // Don't modify the following line, it generates a random number between 1 and 3
 // and stores it in a variable named random
@@ -42,7 +42,6 @@ var random = Math.floor((Math.random() * 3) + 1);
  * Create a function called 'isTwo' that takes a number as a parameter.
  * The function should return a boolean value based on whether or not the passed
  * number is the number 2.
- *
  * Example
  * > isTwo(1) // returns false
  * > isTwo(2) // returns true
@@ -54,6 +53,16 @@ var random = Math.floor((Math.random() * 3) + 1);
  * different result everytime you refresh the page if you are using the random
  * number)
  */
+function isTwo(number) {
+    var number = Math.floor((Math.random() * 3) + 1);
+    if (number === 2){
+        return (number === true);
+    }else{
+        return false;
+    }
+}
+console.log('number' + number);
+console.log(isTwo());
 
 /**
  * TODO:
