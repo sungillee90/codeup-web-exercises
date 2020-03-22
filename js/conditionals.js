@@ -140,8 +140,8 @@ var randomColor = colors[Math.floor(Math.random() * colors.length)];
  * Pass the `randomColor` variable to your function and console.log the results.
  * You should see a different message every time you refresh the page
  */
-function rainbowGenerator (generatingRandom) {
-    return generatingRandom;
+function rainbowGenerator (aColor) {
+    return rainbowGenerator();
 }
 console.log( 'result of generated random color from rainbow is: ' + randomColor );
 /**
