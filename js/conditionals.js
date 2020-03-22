@@ -25,16 +25,72 @@ if (userConfirm === true) {
 
 var userInputNumber = parseInt(userInputNumber);
 
-if ( userInputNumber % 2 === 0 ) {
-    alert("The number you entered is even number.");
-} else if ( userInputNumber > 0) {
-    alert("The value you entered is positive.");
-} else if ( userInputNumber < 0) {
-    alert("The value you entered is negative.");
-} else {
-    alert("Please enter number only!")
-}
+// if ( userInputNumber % 2 === 0 ) {
+//     alert("The number you entered is even number.");
+// } else if ( userInputNumber > 0) {
+//     alert("The value you entered is positive.");
+// } else if ( userInputNumber < 0) {
+//     alert("The value you entered is negative.");
+// } else {
+//     alert("Please enter number only!")
+// }
 
+// Changed to function
+// // Even or ODd
+// function evenOrOdd (aNumber) {
+//     if (aNumber % 2 === 0) {
+//         return "Even number";
+//     } else {
+//         return "Odd number";
+//     }
+// }
+// alert('The number is ' + evenOrOdd(userInputNumber));
+//
+// // Positive or Negative
+// function posOrNeg (aNumber) {
+//     if (aNumber > 0) {
+//         return "Positive number";
+//     } else {
+//         return "Negative number";
+//     }
+// }
+// alert('And also ' + posOrNeg(userInputNumber));
+//
+// // plus100
+// function plus100 (aNumber) {
+//     return (aNumber + 100);
+// }
+// alert('And also plus 100 is ' + plus100(userInputNumber));
+
+if (isNaN(userInputNumber)) {
+    alert("You didn't enter a number");
+} else {
+    // Even or ODd
+    function evenOrOdd (aNumber) {
+        if (aNumber % 2 === 0) {
+            return "Even number";
+        } else {
+            return "Odd number";
+        }
+    }
+    alert('The number is ' + evenOrOdd(userInputNumber));
+
+// Positive or Negative
+    function posOrNeg (aNumber) {
+        if (aNumber > 0) {
+            return "Positive number";
+        } else {
+            return "Negative number";
+        }
+    }
+    alert('And also ' + posOrNeg(userInputNumber));
+
+// plus100
+    function plus100 (aNumber) {
+        return (aNumber + 100);
+    }
+    alert('And also plus 100 is ' + plus100(userInputNumber));
+}
 
 /* ########################################################################## */
 
@@ -151,38 +207,26 @@ alert(analyzeColor(userInputColor));
  * Test your function by passing it various values and checking for the expected
  * return value.
  */
-var randomNumberWalmart =  Math.floor((Math.random() * 5));
-console.log(randomNumberWalmart);
+var luckynumber =  Math.floor((Math.random() * 5));
+var totalprice = 100;
+console.log(luckynumber);
 
-function calculateTotal (percentage, ogprice){
-    return ogprice - ( percentage * ogprice);
+function calculateTotal (luckynumber, totalprice){
+    if ( luckynumber === 0 ) {
+        return totalprice ;
+    } else if (luckynumber === 1) {
+        return totalprice - (totalprice * 0.10);
+    } else if (luckynumber === 2) {
+        return totalprice - (totalprice * 0.25);
+    } else if (luckynumber === 3) {
+        return totalprice - (totalprice * 0.35);
+    } else if (luckynumber === 4) {
+        return totalprice - (totalprice * 0.50);
+    } else if (luckynumber === 5) {
+        return 0;
+    }
 }
-
-/*
- if 0 == 100,
-    1 == 100 - (100 * 0.10)
-    2 == 100 - (100 * 0.25)
-    3 == 100 - (100 * 0.35)
-    4 == 100 - (100 * 0.50)
-    5 == 100 - (100 * 1) or just say "Free free free"
- */
-
-/*
-if ( randomNumberWalmart === 0 ) {
-    return "Sorry, no discount for you.";
-} else if (randomNumberWalmart === 1) {
-    return "10% discount for you!"
-} else if (randomNumberWalmart === 2) {
-    return "25% discount for you!"
-} else if (randomNumberWalmart === 3) {
-    return "35% discount for you!"
-} else if (randomNumberWalmart === 4) {
-    return "Lucky you, 50% discount for you"
-} else (randomNumberWalmart === 5) {
-    return "All of them are FREE, enjoy!"
-}
- */
-
+console.log(calculateTotal(luckynumber, totalprice));
 
 /**
  * TODO:
