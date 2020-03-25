@@ -23,3 +23,17 @@ function showMultiplicationTable (aNumber) {
     console.log(showMultiplicationTable(7));
 
 // console.log('Multiplication Table of '+ showMultiplicationTable(7) );
+
+
+
+// Third Pro
+
+for (var i = 0; i < 10; i++) {
+    var aRandomNum = Math.floor(Math.random() * 180) + 20;
+
+    if (aRandomNum % 2 === 0) {
+        console.log(aRandomNum + ' is even');
+    } else {
+        console.log(aRandomNum + ' is odd');
+    }
+}
