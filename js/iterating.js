@@ -6,7 +6,7 @@
      * 'names'.
      */
 
-    var names = ["Sung","Jenny","Dad-YoungHyuk","Mom-UeonWoo"];
+    var names = ["Sung","Jenny","Dad- Young Hyuk","Mom- Ueon Woo"];
 
     /**
      * TODO:
@@ -15,6 +15,7 @@
      */
 
     console.log('names.length: '+ names.length);
+    console.log(names);
 
     /**
      * TODO:
@@ -34,7 +35,7 @@
      */
 
     for (var nameIndex = 0; nameIndex < names.length; nameIndex++) {
-        console.log('for-loop to log every item in the names: ' + nameIndex, names[nameIndex]);
+        console.log('For-loop to log every item in the names: ' + nameIndex, names[nameIndex]);
         // console.log('name 2: ' + nameIndex, names[nameIndex]);
         // console.log('name 3: ' + nameIndex, names[nameIndex]);
         // console.log('name 4: ' + nameIndex, names[nameIndex]);
@@ -45,8 +46,8 @@
      * Refactor your above code to use a `forEach` loop
      */
 
-    names.forEach(function(names) {
-        console.log('Here is lovely my family names : ' + names + '.');
+    names.forEach(function(item) {
+        console.log('Here is lovely my family names (forEach): ' + item + '.');
     });
 
     /**
@@ -62,14 +63,41 @@
      *  > second([1, 2, 3, 4, 5]) // returns 2
      *  > last([1, 2, 3, 4, 5]) // return 5
      */
-
-    var numbers = ["1", "2", "3", "4", "5"];
-    console.log('numbers.length: '+ numbers.length);
-
-    numbers.forEach(function(numbers) {
-        console.log('Here is numbers using ForEach : ' + numbers);
-    });
-    function aNumbers(aNum) {
-
+    function first (array) {
+        return array[0];
     }
+    function second (array) {
+        return array[1];
+    }
+    function last (array) {
+        return array[array.length-1]; //LAST ONE === ARRAY.[LENGTH - 1]
+    }
+
+    var numbers = [1, 2, 3, 4, 5];
+    var result = first(numbers);
+    console.log('1: First ():' ,result === 1);
+    result = first(names);
+    console.log('2: test:' ,result === "Sung");
+
+    result = second(numbers);
+    console.log('1: Second ():' ,result === 2);
+    result = second(names);
+    console.log('2: Second ():' ,result === "Jenny");
+
+    result = last(numbers);
+    console.log('1: Last ():' ,result === 5);
+    result = last(names);
+    console.log('2: Last ():' ,result === "Mom- Ueon Woo");
+
 })();
+    // What I did...
+
+    // var numbers = ["1", "2", "3", "4", "5"];
+    // console.log('numbers.length: '+ numbers.length);
+    //
+    // numbers.forEach(function(numbers) {
+    //     console.log('Here is numbers using ForEach : ' + numbers);
+    // });
+    // function aNumbers(aNum) {
+    //
+    // }
