@@ -26,7 +26,7 @@ function showMultiplicationTable (aNumber) {
 
 
 
-// Third Pro
+// Problem #3
 
 for (var i = 0; i < 10; i++) {
     var aRandomNum = Math.floor(Math.random() * 180) + 20;
@@ -36,4 +36,24 @@ for (var i = 0; i < 10; i++) {
     } else {
         console.log(aRandomNum + ' is odd');
     }
+}
+
+// Problem #4
+
+for (var i = 1; i <= 9; i++) {
+    console.log(i.toString().repeat(i));
+}
+
+// To repeat number by the number of the input.
+//.repeat() but make sure datatype correct!
+
+for (var outer = 1; outer <= 0; outer ++) {
+
+    // console.log('outer loop: ' + outer);
+    var output = "";
+
+    for (var inner = 1; inner <= outer; inner++) {
+        output += outer;
+    }
+    console.log(output);
 }
