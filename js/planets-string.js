@@ -40,5 +40,11 @@
     planetsUL += "</li></ul>";
     document.write(planetsUL);
     console.log(planetsUL);
-
+    //ForEach
+    var planetsUL = "<ul>";
+    planetsArray.forEach( function(planet) {
+        planetsUL += "<li>" + planet + "</li>";
+    });
+    planetsUL += "</ul>";
+    console.log('foreach: ', planetsUL);
 })();
