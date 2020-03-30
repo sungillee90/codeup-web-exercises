@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>JS-Assessment-Review</title>
+    </head>
+    <body>
+        <script>
+
+            // elevators
+            var tallTower = ['B2', 'B1', 'Lobby', 'F1', 'F2', 'F3', 'F4', 'Deck Pool'];
+            var shortTower = ['B1', 'Lobby', 'F1'];
+
+            // take elevator from the bottom to the top.
+            // forEach
+            shortTower.forEach(function (floor, index) {
+
+                // LOBBY is not available
+                if (index === 1) {
+                   return;
+                }
+                console.log('floor: ', floor);
+                console.log('index: ', index);
+
+            });
+
+            // The  tall tower needs to go from the deck pool to B1 , the elevator will skip F3 Floor.
+
+            // var reverseTallTower = tallTower.reverse();
+
+            for (var currentFloor = tallTower.length-1; currentFloor > 0; currentFloor--) {
+                if ('F3' === tallTower[currentFloor]) {
+                    continue;
+                }
+                console.log(tallTower[currentFloor]);
+            }
+
+            var train = [null, null, null, null, null];
+
+            function getRandomFromRange(min, max) {
+                return Math.floor(Math.random() * (max - min) + min);
+            }
+
+            var numberOfPeopleWaiting = getRandomFromRange(1, 10);
+            console.log('numberOfPeopleWaiting: ', numberOfPeopleWaiting);
+
+            train.forEach(function(element, index) {
+                train[index] = getRandomFromRange(1, 10);
+            });
+
+            console.log('train: ', train);
+
+
+
+            for (var index = 0; index <train.length; index++){
+                if (train[index] === null) {
+                    // there is a seat available
+                    train[index] = 'Taken';
+                    numberOfPeopleWaiting--;
+                }
+            }
+            console.log(train);
+            console.log(numberOfPeopleWaiting);
+
+
+            // if (numberOfPeopleWaiting > train.length) {
+                //
+                // }
+                // train[index] =
+
+            var aVowel = ["a", "e", "i", "o", "u", "A", "E", "O", "I", "U"];
+            console.log ('(aVowel.length:- ', aVowel.length);
+
+            var colors = ['red', 'orange', 'yellow', 'green', 'blue', 'indigo', 'violet'];
+            var sliced = colors.slice(2, 4);
+            console.log(colors);
+            console.log('sliced values (2, 4): ', sliced);
+
+            // function firstAndLast (sqen) {
+            //     return sqen[0], sqen[sqen.length-1];
+            // }
+            //
+            // console.log('firstAndLast Test: ',firstAndLast([1, 2, 3, 4]));
+            // function firstAndLast1(sequence) {
+            //     return [first(sequence), last(sequence)];
+            // }
+            // console.log('firstAndLast Test: ',firstAndLast1([1, 2, 3, 4]));
+
+
+            // function firstAndLast3 (arr) {
+            //     var newArr = [];
+            //     var arrShift = arr.shift();
+            //     newArr.push(arrShift);
+            //     arrShift = arr.pop();
+            //     newArr.push(arrShift);
+            // } return newArr;
+            //
+            // console.log(firstAndLast3(arr));
+
+            var txt = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+            var sln = txt.length;
+            console.log('sln: ', sln);
+
+
+            var str = "Please locate where 'locate' occurs!";
+            var pos = str.lastIndexOf("locate");
+            console.log('"locate"": "Please locate where \'locate\' occurs!" ',pos);
+
+            var str = "Please locate where 'locate' occurs!";
+            var pos1 = str.search("locate");
+            console.log('str.search(\'locate\'): ', pos1);
+
+
+        </script>
+    </body>
+</html>
