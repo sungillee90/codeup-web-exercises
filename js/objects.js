@@ -122,14 +122,14 @@
             }
         },
         {
-            title: "Book [3]",
+            title: "Garfield at Large",
             author: {
-                firstName: "Index",
-                lastName: "Three"
+                firstName: "Jim",
+                lastName: "Davis"
             }
         },
         {
-            title: "Book [4]",
+            title: "Cosmic Ser",
             author: {
                 firstName: "Index",
                 lastName: "Four"
@@ -177,6 +177,13 @@
      *      ---
      *      ...
      */
+
+    books.forEach(function(book, index,) {
+        console.log( "Book # " + (index + 1) );
+        console.log( "Title: " + book.title );
+        console.log( "Author: " + book.author.firstName + " " +book.author.lastName );
+        console.log( "--- " );
+    });
 
 
 
