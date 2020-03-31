@@ -12,17 +12,25 @@
             //                            (this.radius, 2)
             return area; // TODO: return the proper value
 
+            // DO IT OUTSIDE of function!!!!!
             // console.log (circle.getArea(3));
         },
         logInfo: function (doRounding) {
             // TODO: complete this method.
-            if (doRounding === true) {
-                return Math.round(circle.getArea(3));
-            }
+
+            var area = this.getArea();
+
             // If doRounding is true, round the result to the nearest integer.
             // Otherwise, output the complete value
 
-            console.log("Area of a circle with radius: " + this.radius + ", is: " + circle.getArea(3));
+            if ( doRounding === true ) {
+
+                area = Math.round( area );
+
+                // return Math.round(circle.getArea(3));
+            }
+
+            console.log("Area of a circle with radius: " + this.radius + ", is: " + area);
 
         }
     };
@@ -30,7 +38,6 @@
     // 밖에서 console.log 해야한다
     console.log ('circle.getArea= ' +circle.getArea());
 
-    console.log(circle.logInfo(circle.getArea(3)));
     // log info about the circle
     console.log("Raw circle information");
     circle.logInfo(false);
@@ -39,7 +46,9 @@
 
     console.log("=======================================================");
     // TODO: Change the radius of the circle to 5.
-    var radius = 5;
+
+    circle.radius = 5;
+    console.log(circle.getArea());
 
 
     // log info about the circle
