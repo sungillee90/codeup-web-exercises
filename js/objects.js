@@ -197,5 +197,19 @@
      *   outputs the information described above. Refactor your loop to use your
      *   `showBookInfo` function.
      */
+    //Stephen Hawking
+
+    function createBook (aTitle, authorName) {
+        var names = authorName.split( " " );
+        return {
+            title: aTitle,
+            author: { // authorName.author.firstName + ' ' + authorName.author.lastName
+                firstName: names[0],
+                lastName: names[1]
+            }
+        };
+    }
+    console.log( createBook("Harry Potter",  "JK Rowling"));
+
 
 })();
