@@ -75,15 +75,15 @@
     console.log(shoppers);
 
     shoppers.forEach(function(aShopper) {
+        var discountedPrice = aShopper.amount;
+        var discount = 0;
         if(aShopper.amount > 200) {
             // get a discount
-            var discountedPrice = 0.88 * aShopper.amount;
-            console.log(aShopper.name + ' ' + 'Amount: ' + aShopper.amount+ ' discount: 12%, ' + discountedPrice);
-        } else {
-            // you don't get a discount
-            console.log(aShopper.name + ' ' + 'Amount: ' + aShopper.amount+ ' discount: 0%, ' +  aShopper.amount);
+            discount = 12;
+            discountedPrice = 0.88 * aShopper.amount;
         }
-        console.log("Shopper: " + aShopper.name + " -- Amount: " + aShopper.amount)
+        console.log(aShopper.name + ' ' + 'Amount: ' + aShopper.amount+ ' discount: ' + discount + '% ' + 'discountedPrice: $' +discountedPrice);
+        // console.log("Shopper: " + aShopper.name + " -- Amount: " + aShopper.amount)
     });
 
 
