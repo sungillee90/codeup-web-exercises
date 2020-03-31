@@ -178,10 +178,18 @@
      *      ...
      */
 
+    // used .push with "function" I made for bonus exercise.
+    books.push(createBook("Who Moved My Cheese?", "Pepper Jack"));
+    books.push(createBook("Harry Potter",  "JK Rowling"));
+
+
     books.forEach(function(book, index,) {
         console.log( "Book # " + (index + 1) );
-        console.log( "Title: " + book.title );
-        console.log( "Author: " + book.author.firstName + " " +book.author.lastName );
+
+        // console.log( "Title: " + book.title );
+        // console.log( "Author: " + book.author.firstName + " " +book.author.lastName );
+        showBookInfo(book);
+
         console.log( "--- " );
     });
 
@@ -209,7 +217,15 @@
             }
         };
     }
-    console.log( createBook("Harry Potter",  "JK Rowling"));
+
+    function showBookInfo (book) {
+        console.log( "Title: " + book.title );
+        console.log( "Author: " + book.author.firstName + " " +book.author.lastName );
+        console.log( "--- " );
+    }
+
+
+    // console.log( createBook("Harry Potter",  "JK Rowling"));
 
 
 })();
