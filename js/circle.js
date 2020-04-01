@@ -14,6 +14,7 @@
 
             // DO IT OUTSIDE of function!!!!!
             // console.log (circle.getArea(3));
+
         },
         logInfo: function (doRounding) {
             // TODO: complete this method.
