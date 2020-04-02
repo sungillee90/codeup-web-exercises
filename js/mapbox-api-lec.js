@@ -49,16 +49,23 @@ var map = new mapboxgl.Map({
 // TODO TOGETHER: Add a marker to the map using the following coordinates [-96.8084, 32.7799]. This marker will mark the Sixth Floor Muesume on our map.
 // TODO TOGETHER: Change the color of the marker
 var markerOptions = {
-    color: "red"
-}
+    color: "teal",
+    draggable: true
+};
+var markerOptionsToM = {
+    color: "blue",
+    draggable: true
+};
 var marker = new mapboxgl.Marker(markerOptions)
     //Use the .setLngLat() and .addTo() methods to add marker to the map
     .setLngLat([-96.8057, 32.7787])
-    .addTo(map);
+    .addTo(map)
 
 
-
-
+var markerToMuseum = new mapboxgl.Marker(markerOptionsToM)
+    //Use the .setLngLat() and .addTo() methods to add marker to the map
+    .setLngLat([-96.8084, 32.7799])
+    .addTo(map)
 
 // TODO: Experiment with the color, and setting the LngLat
 // TODO: Update the marker object to make the marker draggable. *Hint: reference the docs!
@@ -72,9 +79,20 @@ var marker = new mapboxgl.Marker(markerOptions)
 
 
 // TODO TOGETHER: Add a popup to the map over codeup. Set the html as a paragraph that says "Codeup Rocks!"
+//          to pass an object put {}
+// var popup = new mapboxgl.Popup({});
 
+var popup = new mapboxgl.Popup()
+    .setHTML("<h1>Codeup Rocks!</h1>")
+    .addTo(map);
 
+marker.setPopup(popup);
 
+var popupMuseum = new mapboxgl.Popup()
+    .setHTML("<h1>Sixth Floor Museum!</h1>")
+    .addTo(map);
+
+markerToMuseum.setPopup(popupMuseum);
 
 // TODO TOGETHER: Comment out the popup we just added. Add a popup to the Sixth Floor Musume marker.
 
