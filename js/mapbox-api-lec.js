@@ -112,21 +112,42 @@ geocode("701 Commerce St. Dallas, Tx. 75202", mapboxToken).then(function(result)
     // https://docs.mapbox.com/mapbox-gl-js/api/
     container: 'map',
     style: 'mapbox://styles/mapbox/satellite-v9',
-    center: result,
+    // center: result,
     zoom: 16,
     logoPosition: "top-right"
+    });
+
+    // Right here add the code from the ToDos below.
+    // map.setCenter(result);
+    // map.jumpTo({center: result});
+    map.flyTo({center: result});
 });
-});
-
-
-
 //TODO: Using the geocode method above, add a marker at Codeup to the map
 //TODO: Instead of setCenter try using map.jumpTo()
 //TODO: Instead of setCenter try using map.flyTo()
 
+// geocode("seoul south Korea", mapboxToken).then(function(result) {
+//  console.log('lng , lat: ', result);
+//  var map = new mapboxgl.Map({
+//   // https://docs.mapbox.com/mapbox-gl-js/api/
+//   container: 'map',
+//   style: 'mapbox://styles/mapbox/satellite-v9',
+//   // center: result,
+//   zoom: 16,
+//   logoPosition: "top-right"
+//  });
 
+ // Right here add the code from the ToDos below.
+ // map.setCenter(result);
+ // map.jumpTo({center: result});
+ map.flyTo({center: result});
+});
 
-// TODO TOGETHER: Reverse Geocoding: Using the reverse geocoding method, enter the coordinates {lng: -96.8084, lat: 32.7799} to get a physical address for the Sixth Floor Musume
+// TODO TOGETHER: Reverse Geocoding: Using the reverse geocoding method, enter the coordinates {lng: -96.8084, lat: 32.7799} to get a physical address for the Sixth Floor Museum
+
+reverseGeocode({lng: -96.8084, lat: 32.7799}, mapboxToken).then(function(result){
+ console.log('reverse: ', result);
+});
 
 
 
