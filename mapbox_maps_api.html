@@ -35,19 +35,63 @@
             // Yes we can set the zoom "programmatically".
             // map.setZoom(15);
 
-            geocode('1520 Elm St #111, Dallas, TX 75201', mapboxToken).then(function(coordinates){
-            //    creat marker here
-                var marker = new mapboxgl.Marker()
-                .setLngLat(coordinates)
-                .addTo(map);
-                //    popup with the name of the restaurant
-                var popup = new mapboxgl.Popup()
-                    .setHTML("<p>Campisi's Restaurant!</p>")
-                // Make sure the info window does not display until the marker has been clicked on.
-                // in order to 'click' to pop up, disable .addTo(map) one
+            var restaurantArray = [
+                {
+                    address: "4350 Belt Line Rd, Addison, TX 75001",
+                    popupHTML: "<p>Osaka Sushi Grill<br>4350 Belt Line Rd, Addison, TX 75001</p>"
+                },
+                {
+                    address: "8580 TX-121, Frisco, TX 75034",
+                    popupHTML: "<p>Buca di Beppo Italian Restaurant<br>8580 TX-121, Frisco, TX 75034</p>"
+                },
+                {
+                    address: "1520 Elm St #111, Dallas, TX 75201",
+                    popupHTML: "<p>Campisi's Restaurants | Downtown Dallas<br>1520 Elm St #111, Dallas, TX 75201</p>"
+                },
+                {
+                    address: "944 E Copeland Rd, Arlington, TX 76011",
+                    popupHTML: "<p>Asian Buffet<br>944 E Copeland Rd, Arlington, TX 76011</p>"
+                },
+                {
+                    address: "3726 Towne Crossing Blvd, Mesquite, TX 75150",
+                    popupHTML: "<p>Snuffer's<div class='best'>Home of the best Cheese Fries</div>3726 Towne Crossing Blvd, Mesquite, TX 75150</p>"
+                }
+            ];
+
+            restaurantArray.forEach(function(restaurant) {
+                console.log('Douglas\'s favorite restaurants: ', restaurant);
+                geocode(restaurant.address, mapboxToken).then(function(coordinates){
+                    //    creat marker here
+                    var marker = new mapboxgl.Marker()
+                        .setLngLat(coordinates)
+                        .addTo(map);
+                    //    popup with the name of the restaurant
+                    var popup = new mapboxgl.Popup()
+                        .setHTML(restaurant.popupHTML)
+                    // Make sure the info window does not display until the marker has been clicked on.
+                    // in order to 'click' to pop up, disable .addTo(map) one
                     // .addTo(map);
-                marker.setPopup(popup);
+
+                    marker.setPopup(popup);
+                });
             });
+
+
+
+            // before RE-Factoring Code
+            // geocode('1520 Elm St #111, Dallas, TX 75201', mapboxToken).then(function(coordinates){
+            // //    creat marker here
+            //     var marker = new mapboxgl.Marker()
+            //     .setLngLat(coordinates)
+            //     .addTo(map);
+            //     //    popup with the name of the restaurant
+            //     var popup = new mapboxgl.Popup()
+            //         .setHTML("<p>Campisi's Restaurant!</p>")
+            //     // Make sure the info window does not display until the marker has been clicked on.
+            //     // in order to 'click' to pop up, disable .addTo(map) one
+            //         // .addTo(map);
+            //     marker.setPopup(popup);
+            // });
 
 
 
