@@ -141,7 +141,7 @@ geocode("701 Commerce St. Dallas, Tx. 75202", mapboxToken).then(function(result)
  // map.setCenter(result);
  // map.jumpTo({center: result});
  // map.flyTo({center: result});
-});
+// });
 
 // TODO TOGETHER: Reverse Geocoding: Using the reverse geocoding method, enter the coordinates {lng: -96.8084, lat: 32.7799} to get a physical address for the Sixth Floor Museum
 
