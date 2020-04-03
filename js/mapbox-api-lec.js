@@ -20,14 +20,14 @@ console.log('token: ' + mapboxToken);
 // mapboxgl.accessToken = 'pg.adijasldijaldnunifnwle';
 mapboxgl.accessToken = mapboxToken;
 
-// var map = new mapboxgl.Map({
-//     // https://docs.mapbox.com/mapbox-gl-js/api/
-//     container: 'map',
-//     style: 'mapbox://styles/mapbox/satellite-v9',
-//     center: [-96.8057, 32.7787],
-//     zoom: 10,
-//     logoPosition: "top-right"
-// });
+var map = new mapboxgl.Map({
+    // https://docs.mapbox.com/mapbox-gl-js/api/
+    container: 'map',
+    style: 'mapbox://styles/mapbox/satellite-v9',
+    center: [-96.8057, 32.7787],
+    zoom: 10,
+    logoPosition: "top-right"
+});
 
 
 
@@ -45,24 +45,24 @@ mapboxgl.accessToken = mapboxToken;
 
 // TODO TOGETHER: Add a marker to the map using the following coordinates [-96.8084, 32.7799]. This marker will mark the Sixth Floor Muesume on our map.
 // TODO TOGETHER: Change the color of the marker
-// var markerOptions = {
-//     color: "teal",
-//     draggable: true
-// };
-// var markerOptionsToM = {
-//     color: "blue",
-//     draggable: true
-// };
-// var marker = new mapboxgl.Marker(markerOptions)
-//     //Use the .setLngLat() and .addTo() methods to add marker to the map
-//     .setLngLat([-96.8057, 32.7787])
-//     .addTo(map)
-//
-//
-// var markerToMuseum = new mapboxgl.Marker(markerOptionsToM)
-//     //Use the .setLngLat() and .addTo() methods to add marker to the map
-//     .setLngLat([-96.8084, 32.7799])
-//     .addTo(map)
+var markerOptions = {
+    color: "teal",
+    draggable: true
+};
+var markerOptionsToM = {
+    color: "blue",
+    draggable: true
+};
+var marker = new mapboxgl.Marker(markerOptions)
+    //Use the .setLngLat() and .addTo() methods to add marker to the map
+    .setLngLat([-96.8057, 32.7787])
+    .addTo(map)
+
+
+var markerToMuseum = new mapboxgl.Marker(markerOptionsToM)
+    //Use the .setLngLat() and .addTo() methods to add marker to the map
+    .setLngLat([-96.8084, 32.7799])
+    .addTo(map)
 
 // TODO: Experiment with the color, and setting the LngLat
 // TODO: Update the marker object to make the marker draggable. *Hint: reference the docs!
@@ -106,22 +106,22 @@ mapboxgl.accessToken = mapboxToken;
 
 // TODO TOGETHER: Using the Geocoder helper function, log the coordinates of Codeup and recenter the map to focus on Codeup. Comment out previous map code.
 
-geocode("701 Commerce St. Dallas, Tx. 75202", mapboxToken).then(function(result) {
-   console.log('lng , lat: ', result);
-    var map = new mapboxgl.Map({
-    // https://docs.mapbox.com/mapbox-gl-js/api/
-    container: 'map',
-    style: 'mapbox://styles/mapbox/satellite-v9',
-    // center: result,
-    zoom: 16,
-    logoPosition: "top-right"
-    });
-
-    // Right here add the code from the ToDos below.
-    // map.setCenter(result);
-    // map.jumpTo({center: result});
-    map.flyTo({center: result});
-});
+// geocode("701 Commerce St. Dallas, Tx. 75202", mapboxToken).then(function(result) {
+//    console.log('lng , lat: ', result);
+//     var map = new mapboxgl.Map({
+//     // https://docs.mapbox.com/mapbox-gl-js/api/
+//     container: 'map',
+//     style: 'mapbox://styles/mapbox/satellite-v9',
+//     // center: result,
+//     zoom: 16,
+//     logoPosition: "top-right"
+//     });
+//
+//     // Right here add the code from the ToDos below.
+//     // map.setCenter(result);
+//     // map.jumpTo({center: result});
+//     map.flyTo({center: result});
+// });
 //TODO: Using the geocode method above, add a marker at Codeup to the map
 //TODO: Instead of setCenter try using map.jumpTo()
 //TODO: Instead of setCenter try using map.flyTo()
@@ -145,9 +145,9 @@ geocode("701 Commerce St. Dallas, Tx. 75202", mapboxToken).then(function(result)
 
 // TODO TOGETHER: Reverse Geocoding: Using the reverse geocoding method, enter the coordinates {lng: -96.8084, lat: 32.7799} to get a physical address for the Sixth Floor Museum
 
-reverseGeocode({lng: -96.8084, lat: 32.7799}, mapboxToken).then(function(result){
- console.log('reverse: ', result);
-});
+// reverseGeocode({lng: -96.8084, lat: 32.7799}, mapboxToken).then(function(result){
+//  console.log('reverse: ', result);
+// });
 
 
 

@@ -9,11 +9,51 @@
 
     </head>
     <body>
-        <div id='map' style='width: 400px; height: 300px;'></div>
+
+        <h1>My First Mapbox Map!</h1>
+
+        <div id='map' style='width: 600px; height: 400px;'></div>
+<!--        <script>-->
+<!--            mapboxgl.accessToken = 'pk.eyJ1Ijoic3VuZ2lsLWxlZTkwIiwiYSI6ImNrOGl1ejZldDBhOWMzbm12MWljcmJxZjEifQ.TFrsQCu9H3wbO6bmh3ZAnA';-->
+<!--            var map = new mapboxgl.Map({-->
+<!--                container: 'map',-->
+<!--                style: 'mapbox://styles/mapbox/outdoors-v11'-->
+<!--            });-->
+<!--        </script>-->
 
         <script src="js/keys.js"></script>
         <script src="js/mapbox-geocoder-utils.js"></script>
-        <script src="js/mapbox_maps_api.js"></script>
+        <script>
+            mapboxgl.accessToken = mapboxToken;
+            var map = new mapboxgl.Map({
+                container: 'map',
+                style: 'mapbox://styles/mapbox/streets-v9',
+                zoom: 12,
+                center: [-96.798685, 32.781214]
+            });
+
+            // Yes we can set the zoom "programmatically".
+            // map.setZoom(15);
+
+            geocode('1520 Elm St #111, Dallas, TX 75201', mapboxToken).then(function(coordinates){
+            //    creat marker here
+                var marker = new mapboxgl.Marker()
+                .setLngLat(coordinates)
+                .addTo(map);
+                //    popup with the name of the restaurant
+                var popup = new mapboxgl.Popup()
+                    .setHTML("<p>Campisi's Restaurant!</p>")
+                // Make sure the info window does not display until the marker has been clicked on.
+                // in order to 'click' to pop up, disable .addTo(map) one
+                    // .addTo(map);
+                marker.setPopup(popup);
+            });
+
+
+
+        </script>
+
+
 
     </body>
 </html>
