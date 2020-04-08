@@ -2,21 +2,54 @@
 <html lang="en">
     <head>
         <meta charset="UTF-8">
-        <title>jQuey Exercises</title>
+        <title>jQuery Exercises</title>
     </head>
     <body>
+<!--h1, p, ul, li, div.-->
+    <h1 id="jqselector">jQuery Selectors Exercises</h1>
 
-    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusamus accusantium ad amet at corporis delectus esse et explicabo ipsum laudantium maxime modi quae qui, quisquam quo recusandae voluptates. Nisi, perspiciatis!
-
-
+    <p class="prac">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusamus aliquid architecto assumenda consequuntur debitis delectus doloremque dolorum, exercitationem expedita explicabo ipsam iure neque nesciunt porro provident reiciendis unde voluptates voluptatibus?</p>
+<div>
+    <ul>
+        <h3 id="anotherid" class="makeithappen">Tell me you dream car line up</h3>
+        <li class="codeup">Nissan GTR</li>
+        <li class="future">Porsche 911 GT3 RS</li>
+        <li class="codeup">Lamborghini Sesto Elemento</li>
+        <li class="codeup">Ferrari 458 Italia Speciale</li>
+        <li class="current">BMW M2</li>
+    </ul>
+</div>
+<p class="prac">
+    What was cool moment with you car?
+</p>
     <script src="https://code.jquery.com/jquery-2.2.4.min.js" integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44=" crossorigin="anonymous"></script>
+
     <script>
         "use strict";
         $("body");
 
         $(document).ready(function() {
-            alert( 'The DOM has finished loading!' );
+            // console.log($('#jqselector'));
+
+            // var contents = $('#codeup').html();
+            // alert(contents);
+
+            // Used this example (above) and made it to ONE line
+            // alert($('#jqselector').html());
+            // alert($('#anotherid').html());
+            // By using the same id, it gave me the "undefined"
+
+            // $('.codeup').css('border', '1px solid red')
+            // console.log('Selector by class',$('.codeup'));
+
+            $('li').css('font-size','20px');
+            $('h1,p,li').css('background-color','yellow');
+
+            alert($('h1').html());
+
+
         });
     </script>
+
     </body>
 </html>
