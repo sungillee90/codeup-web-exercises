@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>jQuery Events</title>
+    </head>
+    <body>
+        <h1 id="header">jQuery Events</h1>
+
+        <p>
+           Lorem ipsum dolor sit amet, consectetur adipisicing elit. Commodi deserunt natus optio reprehenderit rerum? Facere molestiae molestias, neque nesciunt nihil nobis numquam, porro quas sapiente totam unde vel veritatis, vitae?
+        </p>
+
+        <p>
+            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Commodi deserunt natus optio reprehenderit rerum? Facere molestiae molestias, neque nesciunt nihil nobis numquam, porro quas sapiente totam unde vel veritatis, vitae?
+        </p>
+
+        <p>
+            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Commodi deserunt natus optio reprehenderit rerum? Facere molestiae molestias, neque nesciunt nihil nobis numquam, porro quas sapiente totam unde vel veritatis, vitae?
+        </p>
+
+        <script src="https://code.jquery.com/jquery-2.2.4.min.js" integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44=" crossorigin="anonymous"></script>
+        <script>
+            console.log($('#header'));
+
+            // Using Vanilla JS.
+            document.getElementById('header').addEventListener('click', function () {
+                // console.log('header was clicked');
+            });
+
+            // jQuery way of addEventListener
+            // see if the jQuery is ready FIRST!
+            // $(document).ready(function () {})
+            $(document).ready(function () {
+
+                $('#header').click(function () {
+                    console.log('From inside jQuery click event handler header was clicked');
+                });
+
+                $('p').click(function() {
+                    console.log('A paragraph was clicked.');
+                });
+
+                $('#header').dblclick(function () {
+                    $('#header').css('background-color', 'teal');
+                });
+
+// 2 ways of putting functions in jQuery
+                // var paragraphDoubleClickedHandler = function () {
+                //     $('p').css('color', 'blue');
+                // };
+
+                // $('p').dblclick(paragraphDoubleClickedHandler)
+                                                // do NOT put () inside of dblclick b/c you do not want it excute it
+                // Or this!
+                $('p').dblclick(function() {
+                    $('p').css('color', 'blue');
+                });
+
+// 이것도 2 ways
+                var inHandler = function () {
+                    $('#header').css('background-color', 'red');
+                };
+
+                var outHandler = function () {
+                    $('#header').css('background-color', 'white');
+                };
+
+                $('#header').hover(inHandler, outHandler);
+
+                var inParagraphHandler = function () {
+                    $('p').css('background-color', 'teal');
+                }
+
+                var outParagraphHandler = function () {
+                    $('p').css('background-color', 'white');
+                }
+
+                $('p').hover(inParagraphHandler, outParagraphHandler);
+
+
+
+
+
+
+            });
+
+        </script>
+    </body>
+</html>
