@@ -42,14 +42,52 @@
             // $('.codeup').css('border', '1px solid red')
             // console.log('Selector by class',$('.codeup'));
 
-            $('li').css('font-size','20px');
+            // $('li').css('font-size','20px');
+            //
+            //
+            // // alert($('h1').html());
+            // // to do last todo Create a jQuery statement to alert the contents of your h1 element(s).
+            // alert($('h1').text());
+            //
+            // $('h1,p,li').css('background-color','yellow');
+            console.log($('h1'));
+            //todo Add jQuery code that will change the background color of an h1 element when clicked.
+            $('h1').click(function () {
+                console.log('From inside jQuery click event handler header was clicked');
+                $('h1').css('background-color', 'red');
+            });
 
+            //todo Make all paragraphs have a font size of 18px when they are double clicked.
+            // $('p').dblclick(function () {
+            //     console.log('From inside jQuery Doubleclick event handler header was clicked');
+            //     $('p').css('font-size', '18px');
+            // });
+            //
+            // Another way to use function.
+            var doubleClicked = function () {
+                $('p').css('font-size', '18px');
+            };
 
-            // alert($('h1').html());
-            // to do last todo Create a jQuery statement to alert the contents of your h1 element(s).
-            alert($('h1').text());
+            $('p').dblclick(doubleClicked);
 
-            $('h1,p,li').css('background-color','yellow');
+            //todo Set all li text color to red when the mouse is hovering; reset to black when it is not.
+
+            // var inHandler = function () {
+            //     $('li').css('color', 'red');
+            // };
+            //
+            // var outHandler = function () {
+            //     $('li').css('color', 'black');
+            // };
+            //
+            // $('li').hover(inHandler, outHandler);
+
+            // Or this
+            $('li').hover(function () {
+                $('li').css('color','red');
+            }, function () {
+                $('li').css('color','black');
+            });
 
         });
     </script>
