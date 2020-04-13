@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>jQuery Attributes</title>
+    <style>
+        #github1 {
+            width : 20%;
+        }
+
+    </style>
+</head>
+<body>
+<button id="zoom-in">+</button>
+<div id="grades-table">
+    <p>placeholder</p>
+</div>
+
+<script src="https://code.jquery.com/jquery-2.2.4.min.js" integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44=" crossorigin="anonymous"></script>
+
+<script>
+
+    $(document).ready(function() {
+
+        var $gradeTable = $ ('#grades-table');
+        // $gradeTable.html();
+        $gradeTable.html('<img id="github1" src="https://github.githubassets.com/images/modules/marketplace/marketplace-illustration-01.svg">');
+
+
+        var $github = $('#github1');
+        console.log($github.css('width'));
+        $('#zoom-in').click(function(){
+
+            $github.css('width', '10%');
+        });
+
+    });
+
+</script>
+
+</body>
+</html>
