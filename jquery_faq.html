@@ -10,9 +10,17 @@
             .show {
                 visibility : visible;
             }
+            .highlight {
+                background-color: yellow;
+                font-weight: bolder;
+            }
+            dt {
+                cursor: pointer;
+            }
         </style>
     </head>
     <body>
+    <a href="#" id="display-dd">Show definitions</a>
         <p>YellowStone Country Montana</p>
         <button id="toggle-visibility">Visible</button>
 
@@ -52,10 +60,31 @@
 
     <script src="https://code.jquery.com/jquery-2.2.4.min.js" integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44=" crossorigin="anonymous"></script>
         <script>
+            // this is called "call-back function"
             $(document).ready(function () {
-                $('#toggle-visibility').click(function() {
+                $('#toggle-visibility').click(function () {
                     $('.invisible').toggleClass('show').css('color', 'red');
                 });
+
+            //    Fer's way
+            $('#display-dd').click(function (event) {
+                // $('.invisible').toggleClass('invisible'); // do NOT use '.invisible' it will NOT go back, so use '.dd'
+                $('dd').toggleClass('invisible'); // do NOT use '.invisible' it will NOT go back, so use '.dd'
+                console.log($('dd')[0].attr('class'));
+                if ( $('dd')[0].className !== 'invisible' ) {
+                    $(this).text("Hide definitions")
+                } else {
+                    $(this).text("Show definitions")
+                }
+            });
+
+
+     /* todo Bonus
+         When any of the dt elements is clicked, the element that was clicked should be highlighted.   */
+
+            $('dt').click(function () {
+                $(this).toggleClass('highlight'); // "this" refers to element that is triggering the event.
+            });
 
             });
         </script>
