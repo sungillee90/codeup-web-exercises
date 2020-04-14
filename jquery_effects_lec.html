@@ -57,7 +57,9 @@
         <button id="empty-my-cart">Hide All Circles</button>
         <button id="show-circles">Show All Circles</button>
         <button id="toggle-circles">Toggle Circles</button>
-
+        <br>
+        <button id="toggle-circles-with-fade">Toggle Circles with Fade</button>
+        <button id="toggle-circles-with-slide">Toggle Circles with Slide</button>
 
         <script src="https://code.jquery.com/jquery-2.2.4.min.js" integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44=" crossorigin="anonymous"></script>
         <script>
@@ -85,6 +87,13 @@
                     circleElements.toggle();
                 })
 
+                $('#toggle-circles-with-fade').click(function () {
+                    circleElements.fadeToggle(2000);
+                })
+
+                $('#toggle-circles-with-slide').click(function () {
+                    circleElements.slideToggle(2000);
+                })
             });
         </script>
 

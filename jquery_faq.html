@@ -23,9 +23,21 @@
             .first-item {
                 color: blue;
             }
+            #registeration-reminder {
+                display: none;
+            }
         </style>
     </head>
     <body>
+<h2 id="registeration-reminder">Please register to use the site.</h2>
+<!--         todo At the top of the page, add a div with two elements, an h1 that reads "Would you like to sign up for our newsletter?" and a span that has an 'x' in it. When the 'x' is clicked, hide the entire div element.-->
+        <div id="newsletter">
+            <h1>"Would you like to sign up for our newsletter?"</h1>
+            <button id="hide-the-div">
+                <span>'x'</span>
+            </button>
+<!--            <span><h1>"Would you like to sign up for our newsletter?"</h1></span>-->
+        </div>
         <!-- Fer's way
         <a href="#" id="display-dd">Show definitions</a>
         -->
@@ -176,6 +188,29 @@
                 var forLastLi = $('last-li');
                         console.log(forLastLi);
                         forEachNationalParks.last().css('background-color', 'lightgreen');*/
+
+                // todo hide the very first div
+                $('#hide-the-div').click(function() {
+                   $(this).parent().hide();
+                });
+
+                // todo The uls next to each h3 that contain facts about each park should start out hidden, and when the corresponding h3 is clicked, the display of the ul should be toggled with a sliding effect.
+                // ULs starts with HIDDEN, When h3 is clicked, toggles uls with sliding effect.
+                $('ul').hide();
+
+                // was NOT able to get EACH of them active...
+                $('h3').click(function () {
+                    // $('ul').slideToggle(2000);
+                    $(this).next().slideToggle(300);
+                });
+
+                // todo After the user has been on the page for 8 seconds, an h2 should fade in that asks the user to register for the site.
+                setTimeout(function (){
+                    $('#registeration-reminder').fadeIn(3000);
+                }, 8000);
+                // alternative way
+
+                // $('#registeration-reminder').delay(8000).fadeIn(3000);
 
             });
         </script>
