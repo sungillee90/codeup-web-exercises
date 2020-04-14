@@ -17,10 +17,18 @@
             dt {
                 cursor: pointer;
             }
+            .bold-font {
+                font-weight: bold;
+            }
+            .first-item {
+                color: blue;
+            }
         </style>
     </head>
     <body>
-    <a href="#" id="display-dd">Show definitions</a>
+        <!-- Fer's way
+        <a href="#" id="display-dd">Show definitions</a>
+        -->
         <p>YellowStone Country Montana</p>
         <button id="toggle-visibility">Visible</button>
 
@@ -56,6 +64,41 @@
             <dd class="invisible">In addition to entrance fees, certain activities do require a permit. Fishing, backcountry hiking and camping, boating, research and commercial photography all need a permit. A special permit must also be obtained for large gatherings such as weddings or other public assemblies.</dd>
         </dl>
 
+        <h3 id="national-parks-heading">National Parks</h3>
+
+
+            <h3 class="national-parks">
+                        Arches
+            </h3>
+            <ul>
+                <li>Park is fun</li>
+                <li>one of the national parks</li>
+                <li>it is awesome in fall</li>
+                <li class="last-li">it has 4 seasons</li>
+            </ul>
+
+            <h3 class="national-parks">
+                Badlands
+            </h3>
+            <ul>
+                <li>Park is fun</li>
+                <li>one of the national parks</li>
+                <li>it is awesome in fall</li>
+                <li class="last-li">it has 4 seasons</li>
+            </ul>
+
+            <h3 class="national-parks">
+                Carlsbad Caverns
+            </h3>
+            <ul>
+                <li>Park is fun</li>
+                <li>one of the national parks</li>
+                <li>it is awesome in fall</li>
+                <li class="last-li">it has 4 seasons</li>
+            </ul>
+
+
+        <button id="highlighter">Make Yellow</button>
 
 
     <script src="https://code.jquery.com/jquery-2.2.4.min.js" integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44=" crossorigin="anonymous"></script>
@@ -67,17 +110,22 @@
                 });
 
             //    Fer's way
+            /*
+
             $('#display-dd').click(function (event) {
                 // $('.invisible').toggleClass('invisible'); // do NOT use '.invisible' it will NOT go back, so use '.dd'
                 $('dd').toggleClass('invisible'); // do NOT use '.invisible' it will NOT go back, so use '.dd'
+
                 console.log($('dd')[0].attr('class'));
                 if ( $('dd')[0].className !== 'invisible' ) {
                     $(this).text("Hide definitions")
                 } else {
                     $(this).text("Show definitions")
                 }
+
             });
 
+            */
 
      /* todo Bonus
          When any of the dt elements is clicked, the element that was clicked should be highlighted.   */
@@ -85,6 +133,49 @@
             $('dt').click(function () {
                 $(this).toggleClass('highlight'); // "this" refers to element that is triggering the event.
             });
+    // todo button that, when clicked makes the last li in each ul have a yellow background.
+
+                $('#highlighter').click(function () {
+                    console.log('button is connected.'); // To make sure they are CONNECTED!
+                    $('ul').each(function () {
+                       // ul get all the children and get the last of the children
+                        console.log($(this).children());
+                        console.log($(this).children().last());
+                        console.log($(this).children().last().toggleClass('highlight'));
+                    });
+                });
+
+    // todo When any h3 is clicked, the lis underneath it should be bolded. Use font-weight: bold to achieve this.
+
+                $('h3').click(function () {
+                    console.log('h3 clicked'); // To make sure they are CONNECTED!
+                    console.log($(this).next()); // it selects "NEXT" elements which in this case UL
+                    console.log($(this).next().children())
+                    $(this).next().children().css('font-weight', 'bold'); // first way
+                //    alternative way
+                   // $(this).next().children().toggleClass('bold-font'); // second way
+                });
+// todo When any list item is clicked, first li of the parent ul should have a font color of blue.
+                $('li').click(function () {
+                    console.log('li was clicked', $(this)); //$this is for 'li' element
+                    // li --> UL--> lis of UL--> first
+                    // $(this).parent().children().first().css('color', 'blue');
+
+                //todo      To change to toggleClass you need to Style first (CLASS style)
+                    $(this).parent().children().first().toggleClass('first-item');
+                });
+
+
+                /*var forEachNationalParks = $('#national-parks li');
+                    forEachNationalParks.each(function (index, element) {
+                        console.log('each: ' + index, element);
+                            // console.log('this inside each: ', this);
+
+                            $(this).css('border', '1px solid black');
+                    });
+                var forLastLi = $('last-li');
+                        console.log(forLastLi);
+                        forEachNationalParks.last().css('background-color', 'lightgreen');*/
 
             });
         </script>
