@@ -1,0 +1,156 @@
+<!--<!DOCTYPE html>
+<html>
+<head>
+    <title>Online Store</title>
+</head>
+
+<body>
+
+<h1>My Tool Store</h1>
+
+<table id="products">
+    <thead>
+        <tr>
+            <th>Title</th>
+            <th>Quantity</th>
+            <th>Price</th>
+            <th>Categories</th>
+        </tr>
+    </thead>
+    <tbody id="insertProducts">
+       &lt;!&ndash;
+                <tr>
+                    <td>qweqwe</td>
+                    <td>123</td>
+                    <td>$1224</td>
+                    <td>asd, asd, ads</td>
+                </tr>
+        &ndash;&gt;
+    </tbody>
+</table>
+<button id="update-btn">Update</button>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+
+<script>
+    "use strict";
+(function() {
+    // TODO: Create an ajax GET request for /data/inventory.json
+
+    var url = "data/inventory.json";
+
+    $.get(url).done(function (data) {
+        console.log(data);    // renderHTML(data);
+    }).fail(function (error) {
+        console.log(error);
+    });
+
+
+   /*
+   function renderHTML(toolsArray) {
+        var HTML = "";
+
+        toolsArray.forEach(function(tool) {
+            HTML = "<tr>\n" +
+                "            <td>toolName</td>\n" +
+                "            <td>quantities</td>\n" +
+                "            <td>$1224</td>\n" +
+                "            <td>asd, asd, ads</td>\n" +
+                "        </tr>";
+        })
+
+    }
+    */
+
+    /*
+    $.ajax(url, {
+        type: "GET"
+    }).done 이런식으로 해도된다.
+    */
+            /*
+                $.get("data/inventory.json")
+                .done(function (list) {
+                    console.log(list);
+                    console.log($("title"));
+                })
+                .fail(function (error) {
+                    console.log(error); // Show me what is the error
+                })
+            */
+
+
+    // TODO: Take the data from inventory.json and append it to the products table
+    //       HINT: Your data should come back as a JSON object; use console.log() to inspect
+    //             its contents and fields
+    //       HINT: You will want to target #insertProducts for your new HTML elements
+
+
+})();
+</script>
+
+</body>
+</html>-->
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Online Store</title>
+</head>
+<body>
+
+<h1>My Tool Store</h1>
+
+<table id="products" border="1">
+    <thead>
+    <tr>
+        <th>Title</th>
+        <th>Quantity</th>
+        <th>Price</th>
+        <th>Categories</th>
+    </tr>
+    </thead>
+    <tbody id="insertProducts"></tbody>
+</table>
+
+<button id="update-btn">Update table</button>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+
+<script>
+    "use strict";
+    (function() {
+        var url = "data/inventory.json";
+
+        getInfo();
+
+        function renderHTML(toolsArray){
+            var HTML = "";
+            $("#insertProducts").empty(); // clean up your structure
+
+            toolsArray.forEach(function(tool){
+                HTML = "<tr>" +
+                    "            <td>"+tool.title+"</td>" +
+                    "            <td>"+tool.quantity+"</td>" +
+                    "            <td>$"+tool.price+"</td>" +
+                    "            <td>"+tool.categories+"</td>" +
+                    "        </tr>";
+                $("#insertProducts").append(HTML);
+            });
+
+        }
+
+        function getInfo(){
+            $.get(url).done(function (data){
+                renderHTML(data);
+            }).fail(function (error){
+                console.error(error);
+            });
+        }
+
+        $("#update-btn").click(function () {
+            getInfo();
+        });
+
+    })();
+</script>
+
+</body>
+</html>
