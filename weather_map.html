@@ -56,7 +56,7 @@
         <!-- First use the AJAX jQuery from google CDN -->
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
 
-        <!-- Then use my "key" from js folder which will NOT be pushed to github (.gitignore) -->
+        <!-- Then used my "key" from js folder which will NOT be pushed to github (.gitignore) -->
         <script src="js/keys.js"></script>
 
         <!-- Bootstrap CDN -->
@@ -71,40 +71,45 @@
 
             "use strict";
             (function () {
-                var currentURL = "http://api.openweathermap.org/data/2.5/weather?q=Dallas,Texas&units=imperial&appid="+OpenWeatherMap_Key;
+                    // For one day weeather cast
+                    // var currentURL = "http://api.openweathermap.org/data/2.5/weather?q=Dallas,Texas&units=imperial&appid="+OpenWeatherMap_Key;
+                    //
+                    // $.get(currentURL)
+                    // .done(function (weatherData) {
+                    //     console.log(weatherData);
+                    //     console.log(weatherData.weather[0].icon);
+                    //     console.log(weatherData.coord);
+                    //     console.log(weatherData.weather[0].description)
+                    //
+                    //     var testingHTML = "";
+                    //
+                    //     testingHTML = "<h1>" + weatherData.weather[0].description + "</h1>"
+                    //
+                    //     $("#testing").append(testingHTML);
+                    // }).fail(function (error) {
+                    //     console.log(error);
+                    // });
 
-                $.get(currentURL)
-                .done(function (weatherData) {
-                    console.log(weatherData);
-                    console.log(weatherData.weather[0].icon);
-                    console.log(weatherData.coord);
-                    console.log(weatherData.weather[0].description)
 
-                    var testingHTML = "";
-                    //  generatedHTML = "<h1>"+album.name+"</h1>" +
-                    testingHTML = "<h1>"+weatherData.weather[0].description+"</h1>"
-
-                    $("#testing").append(testingHTML);
-                }).fail(function (error) {
-                    console.log(error);
-                });
-
-            }) ();
-
-                /*
-                Cleaner way to produce same result
-
-                $.get("http://api.openweathermap.org/data/2.5/weather", {
+                // Forecast
+                $.get("http://api.openweathermap.org/data/2.5/forecast", {
                     APPID: OpenWeatherMap_Key,
-                    q:     "Dallas, US"
+                    q: "Dallas, US",
+                    "units": "imperial"
                 }).done(function (weatherData) {
                     console.log(weatherData);
+
+                    console.log(weatherData.list[0].dt_txt); // will give you the dates (2020-04-16 21:00:00)
+                    console.log(typeof (weatherData.list[0].dt_txt)); // string value
+                    console.log((weatherData.list[0].dt_txt).slice(0, 10)); // will slice the timeline (2020-04-16)
+
                 }).fail(function (error) {
                     console.log(error);
                 });
-                */
 
 
+
+            }) ();
         </script>
 
     </body>
