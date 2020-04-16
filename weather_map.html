@@ -7,7 +7,7 @@
     <body>
 
         <div id="main-heading">
-            <header>Weather App</header>
+            <span class="badge badge-block badge-primary"><header>Weather App</header></span>
         </div>
 
         <div id="search-bar">
@@ -16,37 +16,95 @@
                 <input type="text" placeholder="City, State"><button>Find</button>
             </span>
         </div>
-<!---->
+        <!--                                                                 -->
         <div class="card-group">
             <div class="card">
+                <div class="card-header text-center" >
+                    Dates
+                </div>
+                <ul class="list-group list-group-flush">
+                    <li class="temp text-center">high/low</li>
+                    <li class="weather-icon text-center"><img class="card-img" alt="weather icon"></li>
+                    <li class="list-group-item">Vestibulum at eros</li>
+                </ul>
                 <div class="card-body">
                     <h5 class="card-title">Card title</h5>
-                    <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+                    <p class="card-text">This </p>
                 </div>
                 <div class="card-footer">
                     <small class="text-muted">Last updated 3 mins ago</small>
                 </div>
             </div>
             <div class="card">
+                <div class="card-header text-center">
+                    Dates
+                </div>
+                <ul class="list-group list-group-flush">
+                    <li class="temp text-center">high/low</li>
+                    <li class="weather-icon text-center"><img class="card-img" alt="weather icon"></li>
+                    <li class="list-group-item">Vestibulum at eros</li>
+                </ul>
                 <div class="card-body">
                     <h5 class="card-title">Card title</h5>
-                    <p class="card-text">This card has supporting text below as a natural lead-in to additional content.</p>
+                    <p class="card-text">This .</p>
                 </div>
                 <div class="card-footer">
                     <small class="text-muted">Last updated 3 mins ago</small>
                 </div>
             </div>
             <div class="card">
+                <div class="card-header text-center">
+                    Dates
+                </div>
+                <ul class="list-group list-group-flush">
+                    <li class="temp text-center">high/low</li>
+                    <li class="weather-icon text-center"><img class="card-img" alt="weather icon"></li>
+                    <li class="list-group-item">Vestibulum at eros</li>
+                </ul>
                 <div class="card-body">
                     <h5 class="card-title">Card title</h5>
-                    <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This card has even longer content than the first to show that equal height action.</p>
+                    <p class="card-text">This.</p>
+                </div>
+                <div class="card-footer">
+                    <small class="text-muted">Last updated 3 mins ago</small>
+                </div>
+            </div>
+            <div class="card">
+                <div class="card-header text-center">
+                    Dates
+                </div>
+                <ul class="list-group list-group-flush">
+                    <li class="temp text-center">high/low</li>
+                    <li class="weather-icon text-center"><img class="card-img" alt="weather icon"></li>
+                    <li class="list-group-item">Vestibulum at eros</li>
+                </ul>
+                <div class="card-body">
+                    <h5 class="card-title">Card title</h5>
+                    <p class="card-text">This .</p>
+                </div>
+                <div class="card-footer">
+                    <small class="text-muted">Last updated 3 mins ago</small>
+                </div>
+            </div>
+            <div class="card">
+                <div class="card-header text-center">
+                    Dates
+                </div>
+                <ul class="list-group list-group-flush">
+                    <li class="temp text-center">high/low</li>
+                    <li class="weather-icon text-center"><img class="card-img" alt="weather icon"></li>
+                    <li class="list-group-item">Vestibulum at eros</li>
+                </ul>
+                <div class="card-body">
+                    <h5 class="card-title">Card title</h5>
+                    <p class="card-text">This .</p>
                 </div>
                 <div class="card-footer">
                     <small class="text-muted">Last updated 3 mins ago</small>
                 </div>
             </div>
         </div>
-<!---->
+<!--                                        -->
 
         <div id="testing"></div>
 
@@ -98,10 +156,45 @@
                     "units": "imperial"
                 }).done(function (weatherData) {
                     console.log(weatherData);
-
+                    console.log(weatherData.list[0].main); // focus on first value
                     console.log(weatherData.list[0].dt_txt); // will give you the dates (2020-04-16 21:00:00)
-                    console.log(typeof (weatherData.list[0].dt_txt)); // string value
+                    console.log(typeof (weatherData.list[0].dt_txt)); // string
                     console.log((weatherData.list[0].dt_txt).slice(0, 10)); // will slice the timeline (2020-04-16)
+                    console.log(weatherData.list[0].weather[0].icon); //weather icon
+                    console.log(weatherData.list[0].main.temp_max + " Degrees F");
+                    console.log(weatherData.list[0].main.temp_min + " Degrees F"); // &#8457; for fahrenheit HTML
+                    console.log(weatherData.list[0].main.temp_max + " F " + " / " +weatherData.list[0].main.temp_min + " F")
+                    console.log(weatherData.list[0].weather[0].description); // Description
+                    console.log(weatherData.list[0].main.humidity); // humidity
+                    console.log(weatherData.list[0].wind.speed); // wind speed miles per hours;
+                    console.log(weatherData.list[0].main.pressure); // hPa (hecto Pascal)
+
+
+                    // var imgUrl = "http://openweathermap.org/img/w/"+weather[0].icon+".png";
+                    // $(".card-img").attr('src', imgUrl);
+
+                    var newTest = "";
+
+                    //  Noticed that every 8th listed item will changed date.
+                    //  for loop for 5 days of forecast
+                     for (var x = 0; x < 5; x ++) {
+                         newTest = ((weatherData.list[x].dt_txt).slice(0, 10));
+                         $(".card-header").append(newTest);
+                        }
+
+                     var newDate = "";
+                     for (var x = 5; x <= 37; x = x+8) {
+                         newDate = (((weatherData.list[x].dt_txt).slice(0, 10)));
+                         $(".card-footer").append(newTest);
+                     }
+
+
+                    //
+                    //      $("#testing").append(weatherCards)
+                    //  }
+
+
+
 
                 }).fail(function (error) {
                     console.log(error);
