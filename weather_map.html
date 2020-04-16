@@ -6,8 +6,54 @@
     </head>
     <body>
 
+        <div id="main-heading">
+            <header>Weather App</header>
+        </div>
 
-
+        <div id="search-bar">
+            <span>
+                Place
+                <input type="text" placeholder="City, State"><button>Find</button>
+            </span>
+        </div>
+<!---->
+        <div class="card-group">
+            <div class="card">
+                <img src="..." class="card-img-top" alt="...">
+                <div class="card-body">
+                    <h5 class="card-title">Card title</h5>
+                    <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+                </div>
+                <div class="card-footer">
+                    <small class="text-muted">Last updated 3 mins ago</small>
+                </div>
+            </div>
+            <div class="card">
+                <img src="..." class="card-img-top" alt="...">
+                <div class="card-body">
+                    <h5 class="card-title">Card title</h5>
+                    <p class="card-text">This card has supporting text below as a natural lead-in to additional content.</p>
+                </div>
+                <div class="card-footer">
+                    <small class="text-muted">Last updated 3 mins ago</small>
+                </div>
+            </div>
+            <div class="card">
+                <img src="..." class="card-img-top" alt="...">
+                <div class="card-body">
+                    <h5 class="card-title">Card title</h5>
+                    <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This card has even longer content than the first to show that equal height action.</p>
+                </div>
+                <div class="card-footer">
+                    <small class="text-muted">Last updated 3 mins ago</small>
+                </div>
+            </div>
+        </div>
+<!---->
+<!-- My thought process were wrong, first assumption was all AJAX, KEY(Weather data) and bootstrap but Bootstrap first to layout things first and then all the other magical things  -->
+        <!-- Bootstrap CDN -->
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js" integrity="sha384-B0UglyR+jN6CkvvICOB2joaf5I4l3gm9GU6Hc1og6Ls7i6U/mkkaduKaBhlAXv9k" crossorigin="anonymous"></script>
 
         <!-- First use the AJAX jQuery from google CDN -->
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
@@ -16,9 +62,29 @@
         <script src="js/keys.js"></script>
 
         <!-- Now AJAX -->
+
         <script>
+
+            // todo Start by showing the current conditions for city you live in on your page
+            // From https://openweathermap.org/current
+
             "use strict";
             (function () {
+                var currentURL = "http://api.openweathermap.org/data/2.5/weather?q=Dallas,Texas&appid="+OpenWeatherMap_Key;
+
+                $.get(currentURL)
+                .done(function (weatherData) {
+                    console.log(weatherData);
+                    console.log(weatherData.weather[0].icon);
+                }).fail(function (error) {
+                    console.log(error);
+                });
+
+            }) ();
+
+                /*
+                Cleaner way to produce same result
+
                 $.get("http://api.openweathermap.org/data/2.5/weather", {
                     APPID: OpenWeatherMap_Key,
                     q:     "Dallas, US"
@@ -27,8 +93,7 @@
                 }).fail(function (error) {
                     console.log(error);
                 });
-
-            }) ();
+                */
 
 
         </script>
