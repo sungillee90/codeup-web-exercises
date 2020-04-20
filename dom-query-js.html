@@ -24,7 +24,7 @@
     pariatur. Excepteur sint occaecat cupidatat non proident, sunt in
     culpa qui officia deserunt mollit anim id est laborum.
 </p>
-//Add 4 buttons to the page. Attach click event listeners to each of the buttons and have the handlers perform the modifications that were automatically taking place. For example, the first button should set inner html of mainHeader to "JavaScript is Cool".
+
     <button id="first">First Button</button>
     <button id="second">Second Button</button>
     <button id="third">Third Button</button>
@@ -41,10 +41,9 @@
         var mainHeader = document.getElementById('main-header');
 
         // TODO: Set inner html of mainHeader to "JavaScript is Cool"
-        mainHeader.innerHTML = "JavaScript is Cool";
+        // mainHeader.innerHTML = "JavaScript is Cool";
 
         // TODO: Uncomment the next line and get the sub header element by id
-        var subHeader = document.getElementById('sub-header');
 
 
 
@@ -72,21 +71,21 @@
         // subHeader.style.color = "blue";
 
         // TODO: Uncomment the next line and get all list items
-        var listItems = document.getElementsByTagName('li');
+        // var listItems = document.getElementsByTagName('li');
 
-        for(var index = 0; index < listItems.length; index++) {
-            // TODO: Set text color on every other list item to grey
-            if(index % 2 !== 0) {
-                listItems[index].style.color = 'grey';
-            }
-
-            // TODO: Set text color of li with dbid = 1 to blue
-            var dbId = listItems[index].getAttribute('data-dbid');
-            console.log('dbId: ' + dbId);
-            if(dbId === "1") {
-                listItems[index].style.color = 'blue';
-            }
-        }
+            // for(var index = 0; index < listItems.length; index++) {
+            //     // TODO: Set text color on every other list item to grey
+            //     if(index % 2 !== 0) {
+            //         listItems[index].style.color = 'grey';
+            //     }
+            //
+            //     // TODO: Set text color of li with dbid = 1 to blue
+            //     var dbId = listItems[index].getAttribute('data-dbid');
+            //     console.log('dbId: ' + dbId);
+            //     if(dbId === "1") {
+            //         listItems[index].style.color = 'blue';
+            //     }
+        // }
 
         // TODO: Uncomment the next line and get all elements with class name sub-paragraph
         var subParagraphs = document.getElementsByClassName('sub-paragraph');
@@ -135,3 +134,4 @@
 </script>
 </body>
 </html>
+

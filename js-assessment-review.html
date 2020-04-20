@@ -13,11 +13,14 @@
 
             // take elevator from the bottom to the top.
             // forEach
+            tallTower.forEach(function (floor, index) {
+                console.log(floor,index);
+            })
             shortTower.forEach(function (floor, index) {
 
                 // LOBBY is not available
                 if (index === 1) {
-                   return;
+                   return 0;
                 }
                 console.log('floor: ', floor);
                 console.log('index: ', index);

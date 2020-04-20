@@ -49,7 +49,7 @@ loginButton.addEventListener('click', function(e){
 var img = document.getElementsByTagName('img')[0];
 console.log(img);
 
-console.log(img.hasAttribute("class"));
+console.log(img.hasAttribute("img"));
 
 if(!img.hasAttribute("class")){
     img.setAttribute('class', 'fancy-gif billboard nice-scenery')
