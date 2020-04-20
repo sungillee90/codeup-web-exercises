@@ -17,8 +17,9 @@
             </span>
         </div>
 
+        <div id="main_content">
 
-
+        </div>
 
         <!-- todo jQuery/AJAX, KEY, and Bootstrap -->
         <!-- First use the AJAX jQuery from google CDN -->
@@ -118,21 +119,38 @@
                     //      $(".date").append(newTest);
                     //     } // todo result was spreading out all 5 days in one section...
 
-                    var newDate = "";
-                    var newTemp = "";
-
+                    var htmlBody = "";
 
                     for (var x = 0; x < 40; x += 8) {
-                        newDate = ((weatherData.list[x].dt_txt).slice(0, 10));
-                        newTemp = ("<strong>" + weatherData.list[x].main.temp_max + " ºF " + "</strong>" + " / " + "<strong>" + weatherData.list[x].main.temp_min + " ºF" + "</strong>");
-                        console.log((weatherData.list[x].dt_txt).slice(0, 10));
-                        console.log(x);
-                        console.log(weatherData.list[x].main.temp_max);
-
-                        $("#date1").append(newDate);
-                        $(".temp").append(newTemp);
-
+                        htmlBody += "<tr>"+
+                                    "<td>"+ (weatherData.list[x].dt_txt).slice(0, 10) +"</td>"+
+                                    "<td>"+ "<strong>" +weatherData.list[x].main.temp_max + " ºF " + "</strong>" + " / " + "<strong>" + weatherData.list[x].main.temp_min + " ºF" + "</strong>" +"</td>"+
+                                    "<td>"+ "http://openweathermap.org/img/wn/" + weatherData.list[x].weather[0].icon + "@2x.png" +"</td>"+
+                                    "<td>"+ "Desciption: "+ "<strong>" + weatherData.list[x].weather[0].description + "</strong>" +"</td>"+
+                                    "<td>"+ "Humidity: " + "<strong>" + weatherData.list[x].main.humidity + " %" + "</strong>" +"</td>"+
+                                    "<td>"+ "Wind: " + "<strong>" + weatherData.list[x].wind.speed + " mph" + "</strong>"+ "</td>"+
+                                    "<td>"+ "Pressure: " + "<strong>" + weatherData.list[x].main.pressure + " hPa" + "</strong>"+ "</td>"+
+                                    "<td>"+ "<strong>" + weatherData.list[x].weather[0].description + "</strong>" +"</td>"+
+                                    "</tr>";
                     }
+                    $("#main_content").append(htmlBody);
+                    $("#main-content").attr('src', newIcon);
+                        // var newDate = "";
+                        // var newTemp = "";
+                        //
+                        //
+                        // for (var x = 0; x < 40; x += 8) {
+                        //     newDate = ((weatherData.list[x].dt_txt).slice(0, 10));
+                        //     newTemp = ("<strong>" + weatherData.list[x].main.temp_max + " ºF " + "</strong>" + " / " + "<strong>" + weatherData.list[x].main.temp_min + " ºF" + "</strong>");
+                        //     console.log((weatherData.list[x].dt_txt).slice(0, 10));
+                        //     console.log(x);
+                        //     console.log(weatherData.list[x].main.temp_max);
+                        //
+                        //     $("#date1").append(newDate);
+                        //     $(".temp").append(newTemp);
+                        //
+                        // }
+
 
 
 
