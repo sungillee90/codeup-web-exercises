@@ -3,9 +3,10 @@
     <head>
         <meta charset="UTF-8">
         <title>Weather Map Project Lee</title>
+
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
     </head>
     <body>
-
         <div id="main-heading">
             <span class="badge badge-block badge-primary"><header>Weather App</header></span>
         </div>
@@ -18,7 +19,7 @@
         </div>
 
         <div id="main_content">
-
+            <img id="icon" alt="weather icon">
         </div>
 
         <!-- todo jQuery/AJAX, KEY, and Bootstrap -->
@@ -29,7 +30,6 @@
         <script src="js/keys.js"></script>
 
         <!-- Bootstrap CDN -->
-        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
         <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js" integrity="sha384-B0UglyR+jN6CkvvICOB2joaf5I4l3gm9GU6Hc1og6Ls7i6U/mkkaduKaBhlAXv9k" crossorigin="anonymous"></script>
 
         <!-- Now AJAX -->
@@ -122,16 +122,22 @@
                     var htmlBody = "";
 
                     for (var x = 0; x < 40; x += 8) {
-                        htmlBody += "<tr>"+
-                                    "<td>"+ (weatherData.list[x].dt_txt).slice(0, 10) +"</td>"+
-                                    "<td>"+ "<strong>" +weatherData.list[x].main.temp_max + " ºF " + "</strong>" + " / " + "<strong>" + weatherData.list[x].main.temp_min + " ºF" + "</strong>" +"</td>"+
-                                    "<td>"+ "http://openweathermap.org/img/wn/" + weatherData.list[x].weather[0].icon + "@2x.png" +"</td>"+
-                                    "<td>"+ "Desciption: "+ "<strong>" + weatherData.list[x].weather[0].description + "</strong>" +"</td>"+
-                                    "<td>"+ "Humidity: " + "<strong>" + weatherData.list[x].main.humidity + " %" + "</strong>" +"</td>"+
-                                    "<td>"+ "Wind: " + "<strong>" + weatherData.list[x].wind.speed + " mph" + "</strong>"+ "</td>"+
-                                    "<td>"+ "Pressure: " + "<strong>" + weatherData.list[x].main.pressure + " hPa" + "</strong>"+ "</td>"+
-                                    "<td>"+ "<strong>" + weatherData.list[x].weather[0].description + "</strong>" +"</td>"+
-                                    "</tr>";
+
+                        var imgUrl = "http://openweathermap.org/img/w/" + weatherData.list[x].weather[0].icon+".png";
+                        console.log(weatherData.list[x].weather[0].icon);
+                        $("#icon").attr('src', imgUrl);
+                        htmlBody += "<div>"+
+                                    "<ul>"+
+                                    "<li>"+"<td>"+ (weatherData.list[x].dt_txt).slice(0, 10) +"</td>"+"</li>"+
+                                    "<li>"+"<td>"+ "<strong>" +weatherData.list[x].main.temp_max + " ºF " + "</strong>" + " / " + "<strong>" + weatherData.list[x].main.temp_min + " ºF" + "</strong>" +"</td>"+"</li>"+
+                                    "<li>"+"<td>"+"<img src='http://openweathermap.org/img/wn/" + weatherData.list[x].weather[0].icon + "@2x.png'" +"</td>"+"</li>"+
+                                    "<li>"+"<td>"+ "Desciption: "+ "<strong>" + weatherData.list[x].weather[0].description + "</strong>" +"</td>"+"</li>"+
+                                    "<li>"+"<td>"+ "Humidity: " + "<strong>" + weatherData.list[x].main.humidity + " %" + "</strong>" +"</td>"+"</li>"+
+                                    "<li>"+"<td>"+ "Wind: " + "<strong>" + weatherData.list[x].wind.speed + " mph" + "</strong>"+ "</td>"+"</li>"+
+                                    "<li>"+"<td>"+ "Pressure: " + "<strong>" + weatherData.list[x].main.pressure + " hPa" + "</strong>"+ "</td>"+"</li>"+
+                                    "<li>"+"<td>"+ "<strong>" + weatherData.list[x].weather[0].description + "</strong>" +"</td>"+"</li>"+
+                                    "</ul>"+
+                                    "</div>";
                     }
                     $("#main_content").append(htmlBody);
                     $("#main-content").attr('src', newIcon);
