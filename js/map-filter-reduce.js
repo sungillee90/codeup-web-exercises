@@ -120,3 +120,17 @@ console.log('Your instructors are: ',everyone);
 
 console.log('Using join instead of reduce:', users.map(user => user.email).join(', '));
 console.log('Using join instead of reduce:', users.map(user => user.name).join(', '));
+
+// todo Bonus Use .reduce to get the unique list of languages from the list of users.
+
+const allLanguages = users.reduce((languages, user) => {
+    user.languages.forEach( (language) => {
+        if(!languages.includes(language)){
+            languages.push(language)
+        }
+    });
+    return languages;
+}, []);
+
+console.log(allLanguages);
+
