@@ -7,7 +7,14 @@ function getUserLastCommit (username) {
     // GET /users/USERNAME/events/public
     return fetch(url, {headers: {'Authorization': `token ${githubPersonalAccessToken}`}})
         .then(response => response.json()
-            .then(events => console.log(events[0].created_at))) // does NOT response JSON object...
+            .then( listOfEvents => {
+                for(let event of listOfEvents){
+                    if(event.type === 'PushEvent'){
+                        return event.created_at;
+                    }
+                }
+            })
+        )
 }
 //
 // function getUserLastCommit(username) {
@@ -26,15 +33,18 @@ function getUserLastCommit (username) {
 // }
 
 
-getUserLastCommit('sungillee90');
+getUserLastCommit('sungillee90')
+    .then( lastCommitDate => console.log('lastCommitDate',lastCommitDate));
+getUserLastCommit('sungillee90')
+    .then( lastCommitDate => document.body.innerHTML = `${lastCommitDate} lastCommitDate`);
 
-// const wait = miliseconds => {
-//     return new Promise((resolve, reject) => {
-//         setTimeout(() => {
-//            resolve(miliseconds);
-//         }, miliseconds);
-//     });
-// };
-//
-// wait(1000).then((ms) => console.log(`You\'ll see this after ${ms/1000} second`));
-// wait(3000).then(() => console.log('You\'ll see this after 3 seconds'));
+const wait = miliseconds => {
+    return new Promise((resolve, reject) => {
+        setTimeout(() => {
+           resolve(miliseconds);
+        }, miliseconds);
+    });
+};
+
+wait(1000).then((ms) => console.log(`You\'ll see this after ${ms/1000} second`));
+wait(3000).then(() => console.log('You\'ll see this after 3 seconds'));
