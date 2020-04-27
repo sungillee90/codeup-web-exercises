@@ -17,25 +17,20 @@
 <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
 <script>
+
     "use strict";
     (function() {
-        var restHtml = "";
+        var restHTML = "";
 
         $.ajax("data/blog.json")
-            .done(function(blogPosts){
+            .done( blogPosts => {
 
                 $("#posts").empty();
-
                 var pillsHTML;
-
-                blogPosts.forEach(function(blogPost){
+                blogPosts.forEach(blogPost =>{
                     pillsHTML = "";
-                    blogPost.categories.forEach(function(category){
-
-                        pillsHTML += "<span class=\"badge badge-pill badge-primary\">"+category+"</span>\n";
-
-                    });
-                    restHtml = " <div class=\"card\">\n" +
+                    blogPost.categories.forEach(category => pillsHTML += `<span class=\\"badge badge-pill badge-primary\\">${category}</span>\\n`);
+                    restHTML = " <div class=\"card\">\n" +
                         "        <img src=\"https://via.placeholder.com/250\" class=\"card-img-top\" alt=\"https://via.placeholder.com/250\">\n" +
                         "        <div class=\"card-body\">\n" +
                         "            <h5 class=\"card-title\">"+blogPost.title+"</h5>\n" +
@@ -43,10 +38,35 @@
                         "            <p class=\"card-text\"><small class=\"text-muted\">"+blogPost.date+"</small></p>\n" + pillsHTML +
                         "        </div>\n" +
                         "    </div>";
-                    $("#posts").append(restHtml);
+                    $("#posts").append(restHTML);
 
                 });
             })
+                // .done(function(blogPosts){
+                //
+                //     $("#posts").empty();
+                //
+                //     var pillsHTML;
+                //
+                //     blogPosts.forEach(function(blogPost){
+                //         pillsHTML = "";
+                //         blogPost.categories.forEach(function(category){
+                //
+                //             pillsHTML += "<span class=\"badge badge-pill badge-primary\">"+category+"</span>\n";
+                //
+                //         });
+                //         restHTML = " <div class=\"card\">\n" +
+                //             "        <img src=\"https://via.placeholder.com/250\" class=\"card-img-top\" alt=\"https://via.placeholder.com/250\">\n" +
+                //             "        <div class=\"card-body\">\n" +
+                //             "            <h5 class=\"card-title\">"+blogPost.title+"</h5>\n" +
+                //             "            <p class=\"card-text\">"+blogPost.content+"</p>\n" +
+                //             "            <p class=\"card-text\"><small class=\"text-muted\">"+blogPost.date+"</small></p>\n" + pillsHTML +
+                //             "        </div>\n" +
+                //             "    </div>";
+                //         $("#posts").append(restHTML);
+                //
+                //     });
+                // })
             .fail(function(errors){
                 console.error(errors);
             });

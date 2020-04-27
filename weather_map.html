@@ -79,44 +79,44 @@
                     console.log(weatherData.list[0].main.pressure); // hPa (hecto Pascal)
 
 
-                    // var imgUrl = "http://openweathermap.org/img/w/"+weather[0].icon+".png";
-                    // $(".card-img").attr('src', imgUrl);
+                        // var imgUrl = "http://openweathermap.org/img/w/"+weather[0].icon+".png";
+                        // $(".card-img").attr('src', imgUrl);
 
-                    // var newDate = "";
-                    // var newTemp = "";
-                    // var newIcon = "http://openweathermap.org/img/w/" + weatherData.list[0].weather[0].icon + ".png";
-                    // $(".weather-icon").attr('src', newIcon);
-                    // var newDes = "";
-                    // var newHum = "";
-                    // var newWind = "";
-                    // var newPres  = "";
+                        // var newDate = "";
+                        // var newTemp = "";
+                        // var newIcon = "http://openweathermap.org/img/w/" + weatherData.list[0].weather[0].icon + ".png";
+                        // $(".weather-icon").attr('src', newIcon);
+                        // var newDes = "";
+                        // var newHum = "";
+                        // var newWind = "";
+                        // var newPres  = "";
 
-                    // newDate = ((weatherData.list[0].dt_txt).slice(0, 10));
-                    // $(".date").append(newDate);
+                        // newDate = ((weatherData.list[0].dt_txt).slice(0, 10));
+                        // $(".date").append(newDate);
 
-                    // newTemp = ("<strong>" +weatherData.list[0].main.temp_max + " ºF " + "</strong>" + " / " + "<strong>" + weatherData.list[0].main.temp_min + " ºF" + "</strong>");
-                    // $(".temp").append(newTemp);
+                        // newTemp = ("<strong>" +weatherData.list[0].main.temp_max + " ºF " + "</strong>" + " / " + "<strong>" + weatherData.list[0].main.temp_min + " ºF" + "</strong>");
+                        // $(".temp").append(newTemp);
 
-                    // newDes = ("Desciption: " + "<strong>" + weatherData.list[0].weather[0].description + "</strong>");
-                    // $(".des").append(newDes)
-                    //
-                    // newHum = ("Humidity: " + "<strong>" + weatherData.list[0].main.humidity + " %" + "</strong>");
-                    // $(".humid").append(newHum);
-                    //
-                    // newWind = ("Wind: " + "<strong>" + weatherData.list[0].wind.speed + " mph" + "</strong>");
-                    // $(".wind").append(newWind);
-                    //
-                    // newPres = ("Pressure: " + "<strong>" + weatherData.list[0].main.pressure + " hPa" + "</strong>");
-                    // $(".press").append(newPres);
+                        // newDes = ("Desciption: " + "<strong>" + weatherData.list[0].weather[0].description + "</strong>");
+                        // $(".des").append(newDes)
+                        //
+                        // newHum = ("Humidity: " + "<strong>" + weatherData.list[0].main.humidity + " %" + "</strong>");
+                        // $(".humid").append(newHum);
+                        //
+                        // newWind = ("Wind: " + "<strong>" + weatherData.list[0].wind.speed + " mph" + "</strong>");
+                        // $(".wind").append(newWind);
+                        //
+                        // newPres = ("Pressure: " + "<strong>" + weatherData.list[0].main.pressure + " hPa" + "</strong>");
+                        // $(".press").append(newPres);
                     var htmlBody = "";
 
                     // todo Tried to connect the button function work.
-                    var button = $('#submit-city');
-                    button.click(weatherDataAsked);
-                    function weatherDataAsked() {
-                        var url = "http://api.openweathermap.org/data/2.5/weather?q="+ input.value() +"&units=imperial&appid="+OpenWeatherMap_Key;
-                        loadJSON(url, gotData);
-                    }
+                    // var button = $('#submit-city');
+                    // button.click(weatherDataAsked);
+                    // function weatherDataAsked() {
+                    //     var url = "http://api.openweathermap.org/data/2.5/weather?q="+ input.value() +"&units=imperial&appid="+OpenWeatherMap_Key;
+                    //     loadJSON(url, gotData);
+                    // }
 
                     for (var x = 0; x < 40; x += 8) {
 
