@@ -15,6 +15,7 @@ function getUserLastCommit (username) {
                 }
             })
         )
+        .catch(error => console.log(error));
 }
 //
 // function getUserLastCommit(username) {
