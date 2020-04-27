@@ -42,7 +42,8 @@ getUserLastCommit('sungillee90')
 const wait = miliseconds => {
     return new Promise((resolve, reject) => {
         setTimeout(() => {
-           resolve(miliseconds);
+           resolve(miliseconds),
+               reject('Network Connection Error!');
         }, miliseconds);
     });
 };
