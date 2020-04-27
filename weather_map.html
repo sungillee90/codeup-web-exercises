@@ -15,8 +15,8 @@
 
         <div id="search-bar">
             <span>
-                Place
-                <input type="text" placeholder="City, State"><button>Find</button>
+                Place:
+                <input id="search-city" type="text" placeholder="City, State"><button id="submit-city">Find</button>
             </span>
         </div>
 
@@ -109,6 +109,14 @@
                     // newPres = ("Pressure: " + "<strong>" + weatherData.list[0].main.pressure + " hPa" + "</strong>");
                     // $(".press").append(newPres);
                     var htmlBody = "";
+
+                    // todo Tried to connect the button function work.
+                    var button = $('#submit-city');
+                    button.click(weatherDataAsked);
+                    function weatherDataAsked() {
+                        var url = "http://api.openweathermap.org/data/2.5/weather?q="+ input.value() +"&units=imperial&appid="+OpenWeatherMap_Key;
+                        loadJSON(url, gotData);
+                    }
 
                     for (var x = 0; x < 40; x += 8) {
 
