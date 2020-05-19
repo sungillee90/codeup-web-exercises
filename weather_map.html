@@ -16,11 +16,12 @@
         <div id="search-bar" class="mb-3">
             <span>
                 Place:
-                <input id="search-city" type="text" placeholder="City, State"><button id="submit-city">Find</button>
+                <input id="search-city" type="text" placeholder="City, State">
+                <button id="submit-city">Find</button>
             </span>
         </div>
 
-        <div id="main_content" class="row">
+        <div id="main_content" class="row weatherCard">
         </div>
 
         <div id='map' style='width: 100%; height: 240px; margin-top: 10px'></div>
@@ -40,94 +41,74 @@
             "use strict";
             (function () {
 
+                function weatherInfo(weatherData) {
 
-
-                // Forecast
-                $.get("http://api.openweathermap.org/data/2.5/forecast", {
-                    APPID: OpenWeatherMap_Key,
-                    q: "Dallas, US",
-                    "units": "imperial"
-                }).done(function (weatherData) {
+                    // Initializing Init
                     var htmlBody = "";
-
                     for (var x = 0; x < 40; x += 8) {
                         var imgUrl = "http://openweathermap.org/img/w/" + weatherData.list[x].weather[0].icon+".png";
                         $("#icon").attr('src', imgUrl);
 
                         htmlBody += "<div class='card m-auto p-0' style='width: 240px; height: 285px'>"+
-                                    "<ul class=\"list-group list-group-flush p-0\">"+
-                                    "<li class=\"list-group-item text-center bg-light p-0\">"+ (weatherData.list[x].dt_txt).slice(0, 10) +"</li>"+
-                                    "<li class=\"list-group-item text-center p-0\">"+ "<strong>" +weatherData.list[x].main.temp_max + " ºF " + "</strong>" + " / " + "<strong>" + weatherData.list[x].main.temp_min + " ºF" + "</strong>"+"</li>"+
-                                    "<li class=\"list-group-item text-center p-0\">"+"<img src='http://openweathermap.org/img/wn/" + weatherData.list[x].weather[0].icon + "@2x.png'" +"</li>"+
-                                    "<li class=\"list-group-item m-auto p-0\">"+ "Desciption: "+ "<strong>" + weatherData.list[x].weather[0].description + "</strong>" +"</li>"+
-                                    "<li class=\"list-group-item m-auto p-0\">"+ "Humidity: " + "<strong>" + weatherData.list[x].main.humidity + " %" + "</strong>" +"</li>"+
-                                    "<li class=\"list-group-item m-auto p-0\">"+ "Wind: " + "<strong>" + weatherData.list[x].wind.speed + " mph" + "</strong>"+ "</li>"+
-                                    "<li class=\"list-group-item m-auto p-0\">"+ "Pressure: " + "<strong>" + weatherData.list[x].main.pressure + " hPa" + "</strong>"+"</li>"+
-                                    "<li class=\"list-group-item m-auto p-0\">"+ "<strong>" + weatherData.list[x].weather[0].description + "</strong>" +"</li>"+
-                                    "</ul>"+
-                                    "</div>";
+                            "<ul class=\"list-group list-group-flush p-0\">"+
+                            "<li class=\"list-group-item text-center bg-light p-0\">"+ (weatherData.list[x].dt_txt).slice(0, 10) +"</li>"+
+                            "<li class=\"list-group-item text-center p-0\">"+ "<strong>" +weatherData.list[x].main.temp_max + " ºF " + "</strong>" + " / " + "<strong>" + weatherData.list[x].main.temp_min + " ºF" + "</strong>"+"</li>"+
+                            "<li class=\"list-group-item text-center p-0\">"+"<img src='http://openweathermap.org/img/wn/" + weatherData.list[x].weather[0].icon + "@2x.png'" +"</li>"+
+                            "<li class=\"list-group-item m-auto p-0\">"+ "Desciption: "+ "<strong>" + weatherData.list[x].weather[0].description + "</strong>" +"</li>"+
+                            "<li class=\"list-group-item m-auto p-0\">"+ "Humidity: " + "<strong>" + weatherData.list[x].main.humidity + " %" + "</strong>" +"</li>"+
+                            "<li class=\"list-group-item m-auto p-0\">"+ "Wind: " + "<strong>" + weatherData.list[x].wind.speed + " mph" + "</strong>"+ "</li>"+
+                            "<li class=\"list-group-item m-auto p-0\">"+ "Pressure: " + "<strong>" + weatherData.list[x].main.pressure + " hPa" + "</strong>"+"</li>"+
+                            "<li class=\"list-group-item m-auto p-0\">"+ "<strong>" + weatherData.list[x].weather[0].description + "</strong>" +"</li>"+
+                            "</ul>"+
+                            "</div>";
                     }
                     $("#main_content").append(htmlBody);
-
-                }).fail(function (error) {
-                    console.log(error);
+                }
+                mapboxgl.accessToken = mapboxToken;
+                // todo Tried to connect the button function work.
+                var searchButton = 'Dallas, Tx';
+                $('#submit-city').click(function (e) {
+                    e.preventDefault();
+                    searchButton = $('#search-city').val();
+                    $(".weatherCard").empty();
+                    // $("#container").empty();
+                    weatherDataAsked(searchButton);
                 });
+
+                weatherDataAsked();
+
+                function weatherDataAsked(lon, lat) {
+
+                    geocode(searchButton, mapboxToken).then(function (result) {
+                        lon = result[0];
+                        lat = result[1];
+
+                        console.log(lon, lat);
+
+                        var map = new mapboxgl.Map({
+                            container: 'map',
+                            style: 'mapbox://styles/mapbox/streets-v9',
+                            zoom: 10,
+                        });
+                        map.setCenter(result);
+
+                        // Forecast
+                        // AJAX
+                        $.get("http://api.openweathermap.org/data/2.5/forecast", {
+                            APPID: OpenWeatherMap_Key,
+                            lat: lat,
+                            lon: lon,
+                            "units": "imperial"
+                        }).done(function (data) {
+                            weatherInfo(data);
+                        }).fail(function (error) {
+                            console.log(error);
+                        });
+                    });
+                };
+
             }) ();
         </script>
-        <script>
-            mapboxgl.accessToken = mapboxToken;
-            // todo Tried to connect the button function work.
-            var searchButton = 'Dallas, Tx';
-            $('#submit-city').click(function (e) {
-                e.preventDefault();
-                searchButton = $('#submit-city').val();
-                weatherDataAsked(searchButton);
-            });
 
-            weatherDataAsked();
-
-            function weatherDataAsked() {
-                geocode(searchButton, mapboxToken).then(function (result) {
-                    lon = result[0];
-                    lat = result[1];
-
-                    console.log(lon, lat);
-
-                    var map = new mapboxgl.Map({
-                        container: 'map',
-                        style: 'mapbox://styles/mapbox/streets-v9',
-                        zoom: 10,
-                        // center: [-96.798685, 32.781214]
-                        });
-                    map.setCenter(result);
-                    // var markerOptions = {
-                    //     color: "blue",
-                    //     draggable: true,
-                    // };
-                    // var marker = new mapboxgl.Marker(markerOptions)
-                    //     .setLngLat(result)
-                    //     .addTo(map);
-
-                    // $.get("http://api.openweathermap.org/data/2.5/forecast?", {
-                    //     APPID: OpenWeatherMap_Key,
-                    //     lat: lat,
-                    //     lon: lon,
-                    //     units: "imperial",
-                    // })
-                    //     .done(function (data, status) {
-                    //         console.log(data);
-                    //         console.log(status);
-                    //         weatherDataAsked(data);
-                    //     })
-                    //     .error(function (error) {
-                    //         console.log("Error:");
-                    //         console.log(error);
-                    //     });
-                });
-            };
-
-
-
-        </script>
     </body>
 </html>
