@@ -5,9 +5,19 @@
     <title>JavaScript Practice</title>
     <script src="js/practiceDay2.js"></script>
     <style>
-        .forJS {
-            color: green;
+        /*.forJS {*/
+        /*    color: green;*/
+        /*    text-align: center;*/
+        /*}*/
+        table, tr, td {
+            border: solid black;
+            width: 33%;
             text-align: center;
+            border-collapse: collapse;
+            background-color: lightblue;
+        }
+        table {
+            margin: auto;
         }
     </style>
     <script type="text/javascript">
@@ -18,18 +28,39 @@
         // document.write("<h1>This is h1 JS!</h1>helloWorld from JS");
         // var x = prompt("Enter your name: ");
         // alert("Happy New Year! " + x + ", hope you are doing fantastic!");
-        function change() {
-            document.getElementById("h11").innerHTML = "The Content here";
-            document.getElementById("para1").setAttribute("style","color:red")
+        // function change() {
+        //     document.getElementById("h11").innerHTML = "The Content here";
+        //     document.getElementById("para1").setAttribute("style","color:red")
+        //     document.getElementById("para2").setAttribute("class", "forJS")
+        //     var x = document.getElementById("name").value;
+        //     if(x == "sung") {
+        //         alert("Hello " + x + ", welcome to practice session");
+        //     } else {
+        //         alert("You are not Sung!");
+        //     }
+        // }
+
+        document.write("<table>" +
+            "<tr><th colspan='3'>Numbers from 0 - 10 with their squares, and cubes </th></tr>");
+        document.write(
+            "<tr>" +
+            "<td>Number</td>" +
+            "<td>Squares</td>" +
+            "<td>Cubes</td>" +
+            "</tr>");
+        for(var n = 1; n <= 10; n++) {
+            document.write("<tr><td>" + n + "</td><td>" + n * n + "</td><td>" + n * n * n + "</td></tr>")
         }
+        document.write("</table>");
     </script>
 </head>
 <body>
-    <h1 id="h11">This is JavaScript session</h1>
-    <p id="para1">This is para1</p>
-    <p id="para2">This is para2</p>
-    <p id="para3">This is para3</p>
-    <input type="text" name="text" placeholder="Enter your name" id="name" value="">
-    <button type="button" onclick="change()">ClickMe to change!</button>
+<!--    <h1 id="h11">This is JavaScript session</h1>-->
+<!--    <p id="para1">This is para1</p>-->
+<!--    <p id="para2">This is para2</p>-->
+<!--    <p id="para3" class="forJS">This is para3</p>-->
+<!--    <input type="text" name="text" placeholder="Enter your name" id="name" value="">-->
+<!--    <button type="button" onclick="change()">ClickMe to change!</button>-->
+
 </body>
 </html>
