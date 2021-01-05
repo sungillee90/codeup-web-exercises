@@ -3,6 +3,13 @@
 <head>
     <meta charset="UTF-8">
     <title>JavaScript Practice</title>
+    <script src="js/practiceDay2.js"></script>
+    <style>
+        .forJS {
+            color: green;
+            text-align: center;
+        }
+    </style>
     <script type="text/javascript">
         // var x = "hello from JS";
         // alert(x);
@@ -11,6 +18,10 @@
         // document.write("<h1>This is h1 JS!</h1>helloWorld from JS");
         // var x = prompt("Enter your name: ");
         // alert("Happy New Year! " + x + ", hope you are doing fantastic!");
+        function change() {
+            document.getElementById("h11").innerHTML = "The Content here";
+            document.getElementById("para1").setAttribute("style","color:red")
+        }
     </script>
 </head>
 <body>
@@ -19,6 +30,6 @@
     <p id="para2">This is para2</p>
     <p id="para3">This is para3</p>
     <input type="text" name="text" placeholder="Enter your name" id="name" value="">
-    <button type="button"></button>
+    <button type="button" onclick="change()">ClickMe to change!</button>
 </body>
 </html>
