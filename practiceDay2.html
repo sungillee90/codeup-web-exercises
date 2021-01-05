@@ -1,14 +1,167 @@
-<!DOCTYPE html>
-<html lang="en">
+<!--<!DOCTYPE html>-->
+<!--<html lang="en">-->
+<!--<head>-->
+<!--    <meta charset="UTF-8">-->
+<!--    <title>JavaScript Practice</title>-->
+<!--    <script src="js/practiceDay2.js"></script>-->
+<!--    <style>-->
+<!--        /*.forJS {*/-->
+<!--        /*    color: green;*/-->
+<!--        /*    text-align: center;*/-->
+<!--        /*}*/-->
+<!--        table,td,th {-->
+<!--            border:1px solid black;-->
+<!--            width:66%;-->
+<!--            text-align:center;-->
+<!--            background-color:DarkGray;-->
+<!--            border-collapse:collapse;-->
+<!--        }-->
+<!--        table {-->
+<!--            margin:auto;-->
+<!--        }-->
+<!--        input {-->
+<!--            text-align:left;-->
+<!--        }-->
+<!--    </style>-->
+<!--    <script type="text/javascript">-->
+<!--        // var x = "hello from JS";-->
+<!--        // alert(x);-->
+<!--        // var y = ["10", "20", "30"];-->
+<!--        // alert(y);-->
+<!--        // document.write("<h1>This is h1 JS!</h1>helloWorld from JS");-->
+<!--        // var x = prompt("Enter your name: ");-->
+<!--        // alert("Happy New Year! " + x + ", hope you are doing fantastic!");-->
+<!--        // function change() {-->
+<!--        //     document.getElementById("h11").innerHTML = "The Content here";-->
+<!--        //     document.getElementById("para1").setAttribute("style","color:red")-->
+<!--        //     document.getElementById("para2").setAttribute("class", "forJS")-->
+<!--        //     var x = document.getElementById("name").value;-->
+<!--        //     if(x == "sung") {-->
+<!--        //         alert("Hello " + x + ", welcome to practice session");-->
+<!--        //     } else {-->
+<!--        //         alert("You are not Sung!");-->
+<!--        //     }-->
+<!--        // }-->
+
+<!--        // Square, Cube table-->
+<!--        // document.write("<table>" +-->
+<!--        //     "<tr><th colspan='3'>Numbers from 0 - 10 with their squares, and cubes </th></tr>");-->
+<!--        // document.write(-->
+<!--        //     "<tr>" +-->
+<!--        //     "<td>Number</td>" +-->
+<!--        //     "<td>Squares</td>" +-->
+<!--        //     "<td>Cubes</td>" +-->
+<!--        //     "</tr>");-->
+<!--        // for(var n = 1; n <= 10; n++) {-->
+<!--        //     document.write("<tr><td>" + n + "</td><td>" + n * n + "</td><td>" + n * n * n + "</td></tr>")-->
+<!--        // }-->
+<!--        // document.write("</table>");-->
+
+<!--        // Simple Calculator-->
+<!--        // function cal(cliked_id) {-->
+<!--        //     var val1 = parseFloat(document.getElementById("value1").value);-->
+<!--        //     var val2 = parseFloat(document.getElementById("value2").value);-->
+<!--        //     if (cliked_id == "add") {-->
+<!--        //         document.getElementById("ans").value = val + val2;-->
+<!--        //     } else if (cliked_id == "sub") {-->
+<!--        //         document.getElementById("ans").value = val - val2;-->
+<!--        //     } else if (cliked_id == "multi") {-->
+<!--        //         document.getElementById("ans").value = val * val2;-->
+<!--        //     } else if (cliked_id == "divi") {-->
+<!--        //         document.getElementById("ans").value = val / val2;-->
+<!--        //     } else if(isNaN(val1) || isNaN(val2)) {-->
+<!--        //         alert("Enter a valid number");-->
+<!--        //     }-->
+<!--        //     // var ans = parseFloat(document.getElementById("ans").value);-->
+<!--        // }-->
+<!--        // function clear() {-->
+<!--        //     value1.value = "0";-->
+<!--        //     value2.value = "0";-->
+<!--        //     ans.value = "0";-->
+<!--        // }-->
+<!--        function cal(clicked_id){-->
+<!--            var val1 = parseFloat(document.getElementById('value1').value);-->
+<!--            var val2 = parseFloat(document.getElementById('value2').value);-->
+<!--            if(clicked_id == "add"){-->
+<!--                document.getElementById("ans").value=val1+val2;-->
+<!--            }-->
+<!--            else if(clicked_id == "sub"){-->
+<!--                document.getElementById("ans").value=val1-val2;-->
+<!--            }-->
+<!--            else if(clicked_id == "mul"){-->
+<!--                document.getElementById("ans").value=val1*val2;-->
+<!--            }-->
+<!--            else if(clicked_id == "div"){-->
+<!--                document.getElementById("ans").value=val1/val2;-->
+<!--            }-->
+<!--            else if(isNaN(val1)||isNaN(val2)){-->
+<!--                alert("ENter a valid number");-->
+<!--            }-->
+
+<!--        }-->
+<!--        function clear() {-->
+<!--            document.getElementById("value1").set("value","0");-->
+<!--            value2.value ="0";-->
+<!--            ans.value ="0";-->
+<!--        }-->
+<!--    </script>-->
+<!--</head>-->
+<!--<body>-->
+<!--&lt;!&ndash;    <h1 id="h11">This is JavaScript session</h1>&ndash;&gt;-->
+<!--&lt;!&ndash;    <p id="para1">This is para1</p>&ndash;&gt;-->
+<!--&lt;!&ndash;    <p id="para2">This is para2</p>&ndash;&gt;-->
+<!--&lt;!&ndash;    <p id="para3" class="forJS">This is para3</p>&ndash;&gt;-->
+<!--&lt;!&ndash;    <input type="text" name="text" placeholder="Enter your name" id="name" value="">&ndash;&gt;-->
+<!--&lt;!&ndash;    <button type="button" onclick="change()">ClickMe to change!</button>&ndash;&gt;-->
+<!--    <table>-->
+<!--&lt;!&ndash;        <tr>&ndash;&gt;-->
+<!--&lt;!&ndash;            <th colspan="4">Simple Calculator</th>&ndash;&gt;-->
+<!--&lt;!&ndash;        </tr>&ndash;&gt;-->
+<!--&lt;!&ndash;        <tr>&ndash;&gt;-->
+<!--&lt;!&ndash;            <td>Value 1</td>&ndash;&gt;-->
+<!--&lt;!&ndash;            <td><input type="text" id="value1" value="0"></td>&ndash;&gt;-->
+<!--&lt;!&ndash;            <td>Value 2</td>&ndash;&gt;-->
+<!--&lt;!&ndash;            <td><input type="text" id="value2" value="0"></td>&ndash;&gt;-->
+<!--&lt;!&ndash;        </tr>&ndash;&gt;-->
+<!--&lt;!&ndash;        <tr>&ndash;&gt;-->
+<!--&lt;!&ndash;            <td><input type="button" value="addition" id="add" name="addition" onclick="cal(this.id)"></td>&ndash;&gt;-->
+<!--&lt;!&ndash;            <td><input type="button" value="subtraction" id="sub" name="subtraction" onclick="cal(this.id)"></td>&ndash;&gt;-->
+<!--&lt;!&ndash;            <td><input type="button" value="multiplication" id="multi" name="multiplication" onclick="cal(this.id)"></td>&ndash;&gt;-->
+<!--&lt;!&ndash;            <td><input type="button" value="division" id="divi" name="division" onclick="cal(this.id)"></td>&ndash;&gt;-->
+<!--&lt;!&ndash;        </tr>&ndash;&gt;-->
+<!--&lt;!&ndash;        <tr>&ndash;&gt;-->
+<!--&lt;!&ndash;            <td>Answer: </td>&ndash;&gt;-->
+<!--&lt;!&ndash;            <td><input type="text" name="answer" id="ans" value="" disabled="true"></td>&ndash;&gt;-->
+<!--&lt;!&ndash;            <td colspan="2"><input type="button" value="Clear_All" onclick="clear()">Clear All</td>&ndash;&gt;-->
+<!--&lt;!&ndash;&lt;!&ndash;            <td><button></button></td>&ndash;&gt;&ndash;&gt;-->
+<!--&lt;!&ndash;        </tr>&ndash;&gt;-->
+<!--        <table>-->
+<!--            <tr><th colspan="4">Simple Calculator</th></tr>-->
+<!--            <tr>-->
+<!--                <td>Value 1</td>-->
+<!--                <td><input type="text" id="value1" value="0"></td>-->
+<!--                <td>Value 2</td>-->
+<!--                <td><input type="text" id="value2" value="0"></td>-->
+<!--            </tr>-->
+<!--            <tr>-->
+<!--                <td><input type="button" value="addition" id="add" name="addition" onclick="cal(this.id)"></td>-->
+<!--                <td><input type="button" value="subtraction" id="sub" name="subtraction" onclick="cal(this.id)"></td>-->
+<!--                <td><input type="button" value="multiplication" id="mul" name="multiplication" onclick="cal(this.id)"></td>-->
+<!--                <td><input type="button" value="division" id="div" name="division" onclick="cal(this.id)"></td>-->
+<!--            </tr>-->
+<!--            <tr>-->
+<!--                <td>Answer:</td>-->
+<!--                <td><input type="text" id="ans" value="" disabled="true"></td>-->
+<!--                <td colspan="2"><input type="button" value="Clear All" onclick="clear()"/></td>-->
+<!--            </tr>-->
+<!--    </table>-->
+<!--</body>-->
+<!--</html>-->
+
+
+<html>
 <head>
-    <meta charset="UTF-8">
-    <title>JavaScript Practice</title>
-    <script src="js/practiceDay2.js"></script>
     <style>
-        /*.forJS {*/
-        /*    color: green;*/
-        /*    text-align: center;*/
-        /*}*/
         table,td,th {
             border:1px solid black;
             width:66%;
@@ -24,136 +177,49 @@
         }
     </style>
     <script type="text/javascript">
-        // var x = "hello from JS";
-        // alert(x);
-        // var y = ["10", "20", "30"];
-        // alert(y);
-        // document.write("<h1>This is h1 JS!</h1>helloWorld from JS");
-        // var x = prompt("Enter your name: ");
-        // alert("Happy New Year! " + x + ", hope you are doing fantastic!");
-        // function change() {
-        //     document.getElementById("h11").innerHTML = "The Content here";
-        //     document.getElementById("para1").setAttribute("style","color:red")
-        //     document.getElementById("para2").setAttribute("class", "forJS")
-        //     var x = document.getElementById("name").value;
-        //     if(x == "sung") {
-        //         alert("Hello " + x + ", welcome to practice session");
-        //     } else {
-        //         alert("You are not Sung!");
-        //     }
-        // }
-
-        // Square, Cube table
-        // document.write("<table>" +
-        //     "<tr><th colspan='3'>Numbers from 0 - 10 with their squares, and cubes </th></tr>");
-        // document.write(
-        //     "<tr>" +
-        //     "<td>Number</td>" +
-        //     "<td>Squares</td>" +
-        //     "<td>Cubes</td>" +
-        //     "</tr>");
-        // for(var n = 1; n <= 10; n++) {
-        //     document.write("<tr><td>" + n + "</td><td>" + n * n + "</td><td>" + n * n * n + "</td></tr>")
-        // }
-        // document.write("</table>");
-
-        // Simple Calculator
-        // function cal(cliked_id) {
-        //     var val1 = parseFloat(document.getElementById("value1").value);
-        //     var val2 = parseFloat(document.getElementById("value2").value);
-        //     if (cliked_id == "add") {
-        //         document.getElementById("ans").value = val + val2;
-        //     } else if (cliked_id == "sub") {
-        //         document.getElementById("ans").value = val - val2;
-        //     } else if (cliked_id == "multi") {
-        //         document.getElementById("ans").value = val * val2;
-        //     } else if (cliked_id == "divi") {
-        //         document.getElementById("ans").value = val / val2;
-        //     } else if(isNaN(val1) || isNaN(val2)) {
-        //         alert("Enter a valid number");
-        //     }
-        //     // var ans = parseFloat(document.getElementById("ans").value);
-        // }
-        // function clear() {
-        //     value1.value = "0";
-        //     value2.value = "0";
-        //     ans.value = "0";
-        // }
-        function cal(clicked_id){
-            var val1 = parseFloat(document.getElementById('value1').value);
-            var val2 = parseFloat(document.getElementById('value2').value);
-            if(clicked_id == "add"){
-                document.getElementById("ans").value=val1+val2;
-            }
-            else if(clicked_id == "sub"){
-                document.getElementById("ans").value=val1-val2;
-            }
-            else if(clicked_id == "mul"){
-                document.getElementById("ans").value=val1*val2;
-            }
-            else if(clicked_id == "div"){
-                document.getElementById("ans").value=val1/val2;
-            }
-            else if(isNaN(val1)||isNaN(val2)){
-                alert("ENter a valid number");
-            }
-
+        function calc(clicked_id)
+        {
+            var val1=parseFloat(document.getElementById("value1").value);
+            var val2=parseFloat(document.getElementById("value2").value);
+            if(isNaN(val1)||isNaN(val2))
+                alert("Enter a Valid Number!");
+            else if(clicked_id=="add")
+                document.getElementById("answer").value=val1+val2;
+            else if(clicked_id=="sub")
+                document.getElementById("answer").value=val1-val2;
+            else if(clicked_id=="mul")
+                document.getElementById("answer").value=val1*val2;
+            else if(clicked_id=="div")
+                document.getElementById("answer").value=val1/val2;
         }
-        function clear() {
-            document.getElementById("value1").set("value","0");
-            value2.value ="0";
-            ans.value ="0";
+        function Clear()
+        {
+            value1.value="0";
+            value2.value="0";
+            answer.value="";
         }
     </script>
 </head>
 <body>
-<!--    <h1 id="h11">This is JavaScript session</h1>-->
-<!--    <p id="para1">This is para1</p>-->
-<!--    <p id="para2">This is para2</p>-->
-<!--    <p id="para3" class="forJS">This is para3</p>-->
-<!--    <input type="text" name="text" placeholder="Enter your name" id="name" value="">-->
-<!--    <button type="button" onclick="change()">ClickMe to change!</button>-->
-    <table>
-<!--        <tr>-->
-<!--            <th colspan="4">Simple Calculator</th>-->
-<!--        </tr>-->
-<!--        <tr>-->
-<!--            <td>Value 1</td>-->
-<!--            <td><input type="text" id="value1" value="0"></td>-->
-<!--            <td>Value 2</td>-->
-<!--            <td><input type="text" id="value2" value="0"></td>-->
-<!--        </tr>-->
-<!--        <tr>-->
-<!--            <td><input type="button" value="addition" id="add" name="addition" onclick="cal(this.id)"></td>-->
-<!--            <td><input type="button" value="subtraction" id="sub" name="subtraction" onclick="cal(this.id)"></td>-->
-<!--            <td><input type="button" value="multiplication" id="multi" name="multiplication" onclick="cal(this.id)"></td>-->
-<!--            <td><input type="button" value="division" id="divi" name="division" onclick="cal(this.id)"></td>-->
-<!--        </tr>-->
-<!--        <tr>-->
-<!--            <td>Answer: </td>-->
-<!--            <td><input type="text" name="answer" id="ans" value="" disabled="true"></td>-->
-<!--            <td colspan="2"><input type="button" value="Clear_All" onclick="clear()">Clear All</td>-->
-<!--&lt;!&ndash;            <td><button></button></td>&ndash;&gt;-->
-<!--        </tr>-->
-        <table>
-            <tr><th colspan="4">Simple Calculator</th></tr>
-            <tr>
-                <td>Value 1</td>
-                <td><input type="text" id="value1" value="0"></td>
-                <td>Value 2</td>
-                <td><input type="text" id="value2" value="0"></td>
-            </tr>
-            <tr>
-                <td><input type="button" value="addition" id="add" name="addition" onclick="cal(this.id)"></td>
-                <td><input type="button" value="subtraction" id="sub" name="subtraction" onclick="cal(this.id)"></td>
-                <td><input type="button" value="multiplication" id="mul" name="multiplication" onclick="cal(this.id)"></td>
-                <td><input type="button" value="division" id="div" name="division" onclick="cal(this.id)"></td>
-            </tr>
-            <tr>
-                <td>Answer:</td>
-                <td><input type="text" id="ans" value="" disabled="true"></td>
-                <td colspan="2"><input type="button" value="Clear All" onclick="clear()"/></td>
-            </tr>
-    </table>
+<table>
+    <tr><th colspan="4">Simple Calculator</th></tr>
+    <tr>
+        <td>value1</td>
+        <td><input type="text" id="value1" value="0"/></td>
+        <td>value2</td>
+        <td><input type="text" id="value2" value="0"/></td>
+    </tr>
+    <tr>
+        <td><input type="button" value="addition" id="add" onclick="calc(this.id)"/></td>
+        <td><input type="button" value="subtraction" id="sub" onclick="calc(this.id)"/></td>
+        <td><input type="button" value="multiplication" id="mul" onclick="calc(this.id)"/></td>
+        <td><input type="button" value="division" id="div" onclick="calc(this.id)"/></td>
+    </tr>
+    <tr>
+        <td>Answer:</td>
+        <td><input type="text" id="answer" value="" disabled/></td>
+        <td colspan="2"><input type="button" value="Clear All" onclick="Clear()"/></td>
+    </tr>
+</table>
 </body>
 </html>
