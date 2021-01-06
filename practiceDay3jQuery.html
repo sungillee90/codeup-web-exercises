@@ -4,19 +4,32 @@
     <meta charset="UTF-8">
     <title>ajax practice</title>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+<!--  relative, absolute URL  -->
+<!--    <script src="/js/practiceDay2.js"></script> local -->
 </head>
 <body>
-    <p id="1" onclick="hide(this.id)"> Click Me 0</p>
-    <p id="2" onclick="hide(this.id)"> Click Me 1</p>
-    <p id="3" onclick="hide(this.id)"> Click Me 2</p>
+<!--    <p id="1" onclick="hide(this.id)"> Click Me 0</p>-->
+<!--    <p id="2" onclick="hide(this.id)"> Click Me 1</p>-->
+<!--    <p id="3" onclick="hide(this.id)"> Click Me 2</p>-->
+
+    <p> Click Me 0 </p>
+    <p> Click Me 1 </p>
+    <p> Click Me 2 </p>
 
 
     <script type="text/javascript">
-        function hide(id) {
-            document.getElementById(id).style.display = "none";
-        }
-
+        // function hide(id) {
+        //     document.getElementById(id).style.display = "none";
+        // }
+    // Starting jQuery
+    //     $(selector/element).eventlistener()
+    $(document).ready(function () {
+        $("p").click(function () {
+            $(this).hide();
+        })
+    })
     </script>
+
 
 </body>
 </html>
