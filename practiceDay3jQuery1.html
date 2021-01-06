@@ -15,6 +15,17 @@
 <body>
     <div id="div1" class="elem" style="background-color: red"></div>
     <div id="div2" class="elem" style="background-color: blue"></div>
-    <div id="div3" class="elem" style="background-color: pink"></div>
+    <div id="div3" class="elem" style="background-color: deeppink"></div>
+
+    <script>
+        $(document).ready(function() {
+           $("#div1").fadeIn("fast");
+           $("#div2").fadeIn(4000);
+           $("#div3").fadeIn(5000, function () {
+               alert ("this will pop up after the third box is displayed")
+           });
+        });
+    </script>
+
 </body>
 </html>
