@@ -16,6 +16,7 @@
     <p> Click Me 1 </p>
     <p> Click Me 2 </p>
 
+    vowelsAndConsonants(s);
 
     <script type="text/javascript">
         // function hide(id) {
@@ -29,6 +30,23 @@
         })
         console.log("hello World from JS");
     })
+
+    function vowelsAndConsonants(s) {
+        let vowels = ['a', 'e', 'i','o', 'u'];
+
+        for (let i = 0; i < s.length; i++) {
+            if(s.charAt(i).match(/[aeiou]/)) {
+                console.log(s.charAt(i));
+            }
+        }
+        for (let i = 0; i < s.length; i++) {
+            if(s.charAt(i).match(/[^aeiou]/)) {
+                console.log(s.charAt(i));
+            }
+        }
+
+    }
+
     </script>
 
 
