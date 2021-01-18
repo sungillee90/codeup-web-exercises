@@ -8,4 +8,5 @@ defmodule Math do
   end
 end
 
-IO
+IO.inspect Math.div(1, 0)
+IO.inspect Math.div(5, 3)
