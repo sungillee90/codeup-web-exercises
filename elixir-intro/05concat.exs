@@ -1,4 +1,5 @@
 defmodule Concat do
+#         1st, 2nd, sep(optional 3rd), default -> \\" "
   def join(a, b, sep \\ " ") do
     a <> sep <> b
   end
