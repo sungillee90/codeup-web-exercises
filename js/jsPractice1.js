@@ -1,32 +1,43 @@
-function Circle(radius) {
+// function Circle(radius) {
+//
+//     this.radius = radius;
+//     // same as private key word in java
+//     let defaultLocation = { x: 0, y: 0 };
+//
+//     this.getDefaultLocation = function () {
+//       return defaultLocation;
+//     }
+//
+//     this.draw = function() {
+//         console.log('draw');
+//     }
+//
+//     // getter and setter
+//     Object.defineProperty(this, 'defaultLocation', {
+//         get: function() {
+//            return defaultLocation;
+//         },
+//         set: function(val) {
+//             if (!val.x || !val.y) {
+//                 throw new Error('Invalid Location!');
+//             }
+//                defaultLocation = val;
+//         }
+//     });
+// }
+//
+// const circle = new Circle(10);
+// circle.draw();
 
-    this.radius = radius;
-    // same as private key word in java
-    let defaultLocation = { x: 0, y: 0 };
+let twoSum = function (nums, target) {
+    const map = {};
+    const leng = nums.length;
 
-    this.getDefaultLocation = function () {
-      return defaultLocation;
-    }
-
-    this.draw = function() {
-        console.log('draw');
-    }
-
-    // getter and setter
-    Object.defineProperty(this, 'defaultLocation', {
-        get: function() {
-           return defaultLocation;
-        },
-        set: function(val) {
-            if (!val.x || !val.y) {
-                throw new Error('Invalid Location!');
-            }
-               defaultLocation = val;
+    for (let i = 0; i < leng; i++) {
+        const comp = target - nums[i];
+        if (comp in map) {
+            return [map[comp], i];
         }
-    });
-}
-
-const circle = new Circle(10);
-circle.draw();
-
-
+        map[nums[i]] = i;
+    }
+};
